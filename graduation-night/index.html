@@ -1,0 +1,583 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>きみが選ばなかった言葉 — 卒業前夜、きみを売る</title><style>
+:root{--paper:#f6f2e9;--sheet:#fffcf6;--ink:#283330;--muted:#65736d;--line:#d9dfd4;--accent:#375e54;--wash:#e9eee7;--reader-size:20px;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:5rem}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif}button,input,select,.ui,.site-header,.scene-label,.manuscript-nav{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Noto Sans CJK JP",sans-serif}a{color:var(--accent);text-underline-offset:.2em}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button:disabled{cursor:default;opacity:.45}.hidden{display:none!important}
+.site-header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem max(1.2rem,calc((100vw - 1100px)/2));border-bottom:1px solid var(--line);background:var(--paper);font-size:12px;letter-spacing:.07em}.brand{font-weight:600;white-space:nowrap}.header-nav{display:flex;gap:.65rem}.text-button{border:0;background:none;padding:.35rem .45rem;font-size:12px;white-space:nowrap}.text-button:hover{text-decoration:underline;text-underline-offset:.3em}
+main{width:min(100% - 3rem,860px);margin:0 auto}.cover{padding:6.7rem 0 4rem;max-width:770px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.19em;color:var(--muted);margin:0 0 1.7rem}.cover h1{font-size:clamp(30px,5.1vw,53px);font-weight:500;letter-spacing:.06em;line-height:1.75;margin:0 0 2rem}.cover h1 span{display:block}.cover-quote{font-size:clamp(18px,2.9vw,24px);line-height:1.9;margin:0 0 1.6rem}.lede{font-size:16px;line-height:2.2;max-width:39em}.cover-rule{height:1px;width:78px;background:var(--accent);margin:2.1rem 0}.stats{display:flex;flex-wrap:wrap;gap:.7rem 1.5rem;color:var(--muted);font-size:12px;line-height:1.8;margin:1.8rem 0 2rem}.actions{display:flex;flex-wrap:wrap;gap:.7rem}.button{border:1px solid var(--accent);border-radius:3px;padding:.85rem 1.3rem;font-size:14px;background:transparent;line-height:1.6}.button.primary{background:var(--accent);color:var(--sheet)}.button:hover{filter:brightness(.95)}.help{margin-top:1.4rem;color:var(--muted);font-size:12px;line-height:1.9}.source-note{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.6rem;font-size:12px;line-height:2;color:var(--muted)}
+.reader{max-width:730px;margin:0 auto;padding:3.2rem 0 5rem}.reader-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}.reader-route{font-size:12px;color:var(--muted);letter-spacing:.14em}.reader-tools{display:flex;align-items:center;gap:.25rem}.reader-tools button{border:1px solid var(--line);background:var(--sheet);padding:.3rem .6rem;border-radius:3px;font-size:13px}.reader h2{font-size:clamp(22px,3.5vw,31px);font-weight:500;line-height:1.7;margin:1.4rem 0 2.6rem}.prose{font-size:var(--reader-size);line-height:2.1;overflow-wrap:anywhere}.prose p{margin:0 0 1.05em}.prose .narration{text-indent:1em}.prose .spoken{text-indent:0}.prose .scene-break{text-align:center;color:var(--muted);margin:2.5rem 0;letter-spacing:.5em}.ending-line{margin-top:3rem!important;text-align:right;font-size:.88em;letter-spacing:.1em}.reader-bottom{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem}.choice-label{font-size:12px;color:var(--muted);margin:0 0 1rem;letter-spacing:.1em}.choices{display:grid;gap:.7rem}.choice{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--sheet);padding:1rem 1.15rem;border-radius:3px;font-size:15px;line-height:1.9;transition:border-color .15s,background .15s}.choice:hover{border-color:var(--accent);background:var(--wash)}.reader-footer{display:flex;justify-content:space-between;gap:1rem;margin-top:1.5rem}.end-note{font-size:15px;line-height:2;margin-bottom:1.2rem}
+.manuscript{padding:3rem 0 6rem}.manuscript>h2{font-size:30px;font-weight:500}.manuscript-intro{font-size:14px;line-height:2;color:var(--muted);max-width:46em}.toc{display:grid;grid-template-columns:1fr 1fr;gap:.75rem 1.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.4rem 0;margin:2rem 0 3rem;font-size:13px;line-height:1.7}.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}.manuscript-scene{max-width:730px;margin:0 auto;padding:3rem 0;border-bottom:1px solid var(--line)}.scene-label{font-size:11px;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem}.scene-label span{display:inline-block;margin-left:.7rem;padding:.18em .5em;border:1px solid var(--line);border-radius:2px}.manuscript-scene h3{font-size:25px;line-height:1.7;font-weight:500;margin:0 0 2rem}.manuscript-nav{background:var(--wash);border-left:2px solid var(--accent);padding:1rem 1.2rem;margin-top:2rem;font-size:12px;line-height:1.9}.nav-caption{margin:0;font-weight:600}.all-choices{padding-left:1.5rem;margin:.65rem 0}.all-choices li{margin:.6rem 0}.all-choices span{font-size:11px;white-space:nowrap}.jump-note{margin:.5rem 0}.tech{margin:.5rem 0}.tech summary{cursor:pointer}.tech pre{white-space:pre-wrap}.end-footer{max-width:770px;margin:2rem auto 0;padding:2rem 0;border-top:1px solid var(--line);font-size:12px;line-height:2;color:var(--muted)}
+@media(max-width:620px){main{width:calc(100% - 2.2rem)}.site-header{padding:.7rem .7rem;gap:.25rem}.brand{font-size:10px;letter-spacing:0}.header-nav{gap:.05rem}.text-button{font-size:10px;padding:.3rem .4rem}.cover{padding:3.4rem 0 2.5rem}.cover h1{letter-spacing:.03em}.lede{font-size:15px}.reader{padding-top:2rem}.prose{font-size:calc(var(--reader-size) - 2px);line-height:2}.reader h2{margin-bottom:2rem}.toc{grid-template-columns:1fr;gap:.8rem}.manuscript-scene h3{font-size:21px}.choice{font-size:14px}.reader-footer{gap:.3rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{.site-header,.cover,.reader,.manuscript-intro,.toc,.manuscript-nav,.end-footer{display:none!important}.manuscript{display:block!important;padding:0}body{background:#fff;color:#000}main{width:100%}.manuscript-scene{max-width:none;break-before:page}.prose{font-size:11pt;line-height:1.8}.scene-label{color:#555}}
+
+:root{--paper:#141720;--sheet:#1d222d;--ink:#eeebe5;--muted:#b1b6c4;--line:#394151;--accent:#f0a593;--wash:#262c39;color-scheme:dark}.cover h1{font-size:clamp(30px,5vw,52px)}.button.primary{color:#141720}.variant-block{border-left:2px solid var(--accent);padding-left:1rem}.variant-label{font-size:13px;color:var(--muted)}@media(max-width:540px){.site-header{flex-wrap:wrap}.brand{font-size:11px}.cover{padding-top:3rem}}
+</style></head><body>
+<header class="site-header"><span class="brand">きみが選ばなかった言葉 / 別バージョン</span><nav class="header-nav" aria-label="表示切替"><button id="home-button" class="text-button">表紙</button><button id="reader-button" class="text-button">分岐で読む</button><button id="all-button" class="text-button">全文一覧</button></nav></header>
+<main><section id="cover" class="cover"><p class="eyebrow ui">恋愛サスペンス / 完結・分岐ノベル</p><h1>卒業前夜、<br>きみを売る</h1><p class="cover-quote">「別れよう」<br>彼女はそう言って、内側から鍵をかけた。</p><div class="cover-rule"></div><p class="lede">血のついた袖。親友から届く写真。<br>一年前の火事でなくした、僕の指輪。<br>卒業まで一晩。<br>誰を信じても、誰かの嘘を引き受ける。</p><div class="stats ui"><span>30場面</span><span>6つの結末</span><span>全分岐合計 15,468字</span></div><div class="actions ui"><button id="start-button" class="button primary">今夜を始める</button><button id="continue-button" class="button hidden">続きから読む</button><button id="manuscript-button" class="button">全編原稿・ネタバレあり</button></div><p class="help ui">選択で証拠、信頼、関係の行方が変わります。時刻表示による操作の時間制限はありません。読書位置はこのブラウザに自動保存されます。<br>現行第二稿とは別の物語・別の保存領域です。</p></section>
+<section id="reader" class="reader hidden" aria-label="分岐に沿って読む"><div class="reader-top ui"><span id="reader-route"></span><div class="reader-tools"><button id="font-down" aria-label="文字を小さくする">小</button><button id="font-up" aria-label="文字を大きくする">大</button></div></div><h2 id="reader-title" tabindex="-1"></h2><div id="reader-text" class="prose"></div><div class="reader-bottom ui"><div id="reader-choices"></div><div class="reader-footer"><button id="previous-button" class="text-button">← 前の場面に戻る</button><button id="restart-button" class="text-button">最初から選び直す</button></div></div></section>
+<section id="manuscript" class="manuscript hidden"><h2>全編原稿</h2><p class="help ui">選ばなかった場面と全結末を含みます。場面末尾の移動先に沿ってお読みください。</p><section id="scene-N00"><div class="scene-label">N00</div><h3>20:41　別れる前に、隠して</h3><div class="prose"><p class="spoken">「別れよう」</p>
+<p class="narration">紗季はそう言ってから、僕の部屋の鍵を内側からかけた。<br>チェーンまでかけた。</p>
+<p class="spoken">「それ、帰る人の動きじゃないだろ」</p>
+<p class="narration">笑っていいのか迷っていた。紗季がコートを脱ぐまでは。<br>白い袖口に血がついていた。</p>
+<p class="spoken">「誰の」<br>「私の。手、切っただけ」</p>
+<p class="narration">差し出された右手には、タオルが巻いてあった。赤い染みは小さい。小さいのを確認してから、僕はようやく息をした。<br>三月二十七日。卒業式の前夜。<br>二年付き合った恋人の手を、そんな順番で見た。</p>
+<p class="spoken">「救急箱、まだ洗面所？」<br>「うん。どうしたんだよ」<br>「十分だけ。ここにいさせて」<br>「別れたいのに？」</p>
+<p class="narration">紗季が答える前に、スマホが震えた。<br>知らない番号から、写真が届いていた。</p>
+<p class="narration">駅前のホテル。エレベーターの前。<br>紗季の頬を、澪が両手で包んでいる。<br>紗季の首には、僕があげた細いネックレスが光っていた。</p>
+<p class="spoken">《おまえだけが、まだ恋人のつもりだ》</p>
+<p class="narration">写真を拡大した。澪の口元と紗季の口元が重なって見える。その数ミリを、指で何度も広げた。</p>
+<p class="spoken">「これ、何」</p>
+<p class="narration">紗季はスマホを受け取らなかった。</p>
+<p class="spoken">「説明する。でも、今は」</p>
+<p class="narration">インターホンが鳴った。<br>モニターの中で、澪が雨に濡れていた。<br>僕の親友。紗季の親友。明日の式で、僕たちと写真を撮るはずの人。</p>
+<p class="narration">『湊。開けて』</p>
+<p class="narration">澪はカメラに向かって拳を開いた。<br>手のひらに、銀の指輪があった。<br>去年の火事でなくした、僕の指輪。</p>
+<p class="narration">『紗季がそこにいるなら、帰さないで』</p>
+<p class="narration">紗季が僕の腕をつかんだ。</p>
+<p class="spoken">「いないって言って」</p>
+<p class="narration">ドア一枚の向こうで、澪が続けた。</p>
+<p class="narration">『今夜、あんたが誰をかばうかで、一人、犯人になる』</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-N01S">紗季を隠し、澪と廊下で話す <span>→ N01S</span></a></li><li><a href="#scene-N01M">ドアを開けて、二人に同じ場所で説明させる <span>→ N01M</span></a></li></ol></div></section>
+<section id="scene-N01S"><div class="scene-label">N01S</div><h3>20:44　最初の共犯</h3><div class="prose"><p class="narration">僕は紗季を洗面所に入れた。<br>ドアが閉まる寸前、彼女の指が僕の袖から離れた。</p>
+<p class="spoken">「ありがとう、って言っていいのかわからない」<br>「あとで説明して」</p>
+<p class="narration">チェーンを外し、廊下に出た。<br>澪は僕の顔より先に、ドアの隙間を見た。</p>
+<p class="spoken">「紗季は」<br>「来てない」</p>
+<p class="narration">言葉にした途端、部屋の中で水が流れた。<br>聞こえなかったふりをするには、澪は僕を知りすぎていた。</p>
+<p class="spoken">「下手。こんなのに一年だまされてたの、腹立つな」</p>
+<p class="narration">澪が僕の手を取り、指輪を押し込んだ。<br>内側の傷。自転車の鍵でつけた、いびつなＭ。<br>間違いなかった。</p>
+<p class="spoken">「律の荷物から出た。昨日、病院で返された」</p>
+<p class="narration">律。<br>去年、旧学生会館の火事で大怪我をした、澪の姉。<br>僕は一度だけ見舞いに行った。病室の前で、澪に帰された。</p>
+<p class="spoken">「紗季を隠すのはいいよ。その代わり、最後まで聞いて」</p>
+<p class="narration">澪は声を落とした。</p>
+<p class="spoken">「あんたの恋人、あの火事の録音を切ってる」</p>
+<p class="narration">僕は部屋のドアを開けた。<br>今度は、二人とも入れた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N02">20:49　口を塞いだ写真</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;saki_hold&quot;: true}</pre></details></div></section>
+<section id="scene-N01M"><div class="scene-label">N01M</div><h3>20:44　三人分の逃げ場</h3><div class="prose"><p class="narration">紗季の指を、一本ずつ腕から外した。</p>
+<p class="spoken">「同じ説明をして。僕ら二人に」</p>
+<p class="narration">ドアを開けると、澪は紗季を見て足を止めた。<br>怒鳴ると思った。<br>澪は鞄からハンカチを出して、紗季の右手に巻き直した。</p>
+<p class="spoken">「それ、押さえてないと意味ない」<br>「澪」<br>「手は出して。話は別」</p>
+<p class="narration">慣れた手つきだった。<br>僕は二人の間に割り込むみたいに、テーブルの椅子を引いた。</p>
+<p class="spoken">「ホテルの写真、見た」</p>
+<p class="narration">澪の指が止まった。<br>紗季ではなく、僕を見た。</p>
+<p class="spoken">「どこまで届いてる？」<br>「どこまでって何だよ」</p>
+<p class="narration">自分の声で、二人が同時に黙った。<br>それがいちばん嫌だった。僕にだけ聞かせない会話の続きが、二人の間にある。</p>
+<p class="narration">澪は指輪をテーブルに置いた。</p>
+<p class="spoken">「これを紗季に見せたら、全部話すって約束した。だから来た」</p>
+<p class="narration">紗季は椅子に座らなかった。<br>僕ら三人がよくカレーを食べたテーブルの前で、面接を受ける人のように立っていた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N02">20:49　口を塞いだ写真</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;mio_trust&quot;: true}</pre></details></div></section>
+<section id="scene-N02"><div class="scene-label">N02</div><h3>20:49　口を塞いだ写真</h3><div class="prose"><p class="spoken">「キスはしてない」</p>
+<p class="narration">紗季は僕のスマホを指差した。</p>
+<p class="spoken">「廊下で息ができなくなった。澪が、私の顔を上げた」<br>「ホテルで何してた」<br>「律さんの話を聞いてた。病院の外で会える日だったから」</p>
+<p class="narration">澪が自分のスマホを出した。<br>同じ日、同じロビー。車椅子に座る律と、その横で笑おうとしている紗季。<br>紗季の膝に、黒い小型レコーダーが載っている。</p>
+<p class="spoken">「写真は誤解だよ」と澪が言った。<br>「でも、湊に黙って会ってたのは本当。去年の秋から、何回も」</p>
+<p class="narration">僕は紗季を見た。<br>秋。僕が泊まりに来てと言って、仕事が忙しいと断られた夜がいくつもあった。</p>
+<p class="spoken">「火事の録音って？」</p>
+<p class="narration">紗季が答えるより早く、三台のスマホが同時に鳴った。<br>送り主は、同じ番号だった。</p>
+<p class="spoken">《今夜23時、中央ホテルの卒業祝賀会。控室Ｂ》<br>《録音の原本と、学生会館の搬入票を持ってこい》<br>《来なければ、この声明を大学と新聞社に送る》</p>
+<p class="narration">添付された文書の一行目を読んだ。</p>
+<p class="narration">〈旧学生会館火災に関して、私、湊は虚偽の避難案内を作成し、事故後、証拠の隠蔽を主導しました〉</p>
+<p class="narration">下に、僕の署名があった。<br>大学の印刷室を使うために書いた申請書。その署名を切り抜いていた。</p>
+<p class="spoken">「荒瀬さんだ」</p>
+<p class="narration">紗季が言った。<br>大学の支援団体の代表。旧会館の改修を請け負った会社の社長。<br>明日の卒業式では、学生に花を渡す人だ。</p>
+<p class="narration">僕は一行目をもう一度読んだ。<br>全部が嘘なら、よかった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N03">20:56　主人公のしたこと</a></p></div></section>
+<section id="scene-N03"><div class="scene-label">N03</div><h3>20:56　主人公のしたこと</h3><div class="prose"><p class="narration">去年の三月。旧会館で最後の冊子展を開いた。<br>僕と紗季が編集して、澪と律が会場を作った。僕の父の印刷所が、チラシを安く刷った。</p>
+<p class="narration">開催二日前、東階段が資材置き場になっているのを見つけた。<br>非常口の前に石膏ボードが積んであった。</p>
+<p class="narration">荒瀬は言った。<br>「当日には動かす。印刷はそのままでいい」</p>
+<p class="narration">僕は現地を確認せず、案内図に〈東階段使用可〉と入れた。<br>納期に間に合ったので、父に褒められた。</p>
+<p class="narration">会場の奥で煙が出たとき、律はその地図を持って東階段へ走った。<br>来場者を誘導するために。</p>
+<p class="spoken">「僕が嘘の案内図を作ったのは、本当だ」</p>
+<p class="narration">声に出すと、紗季が目を閉じた。<br>澪は目を閉じなかった。</p>
+<p class="spoken">「それ、今、初めて私に言ったね」</p>
+<p class="narration">僕は頷くしかなかった。</p>
+<p class="narration">火の原因は、工事中の仮設配線だったと聞いた。<br>僕が火をつけたわけじゃない。その一文だけを、一年、自分に言ってきた。</p>
+<p class="spoken">「搬入票には、東階段に資材を置いた会社と日付が書いてある」</p>
+<p class="narration">紗季がコートの内ポケットを押さえた。</p>
+<p class="spoken">「荒瀬さんが、今日、古い記録を処分するって聞いた。印刷所の倉庫に残ってる控えを取ってきた。割れた書類棚で、手を切った」<br>「なんで僕に言わないんだよ」<br>「言ったら、お父さんに確認するでしょ」</p>
+<p class="narration">父も知っている。<br>紗季の言い方は、そうだった。</p>
+<p class="narration">スマホに新しい写真が来た。<br>夜の印刷所。まだ点いている事務所の明かり。</p>
+<p class="spoken">《お父さんは話が早かったぞ》</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-N04F">父に電話し、今夜のことを伝える <span>→ N04F</span></a></li><li><a href="#scene-N04S">父には知らせず、紗季の持ってきた封筒を開ける <span>→ N04S</span></a></li></ol></div></section>
+<section id="scene-N04F"><div class="scene-label">N04F</div><h3>21:01　父親の声</h3><div class="prose"><p class="narration">父は一回目の呼び出しで出た。</p>
+<p class="narration">『お前、家にいるか』<br>「荒瀬さんから連絡が来た」</p>
+<p class="narration">電話の向こうで、テレビの音が消えた。</p>
+<p class="narration">『何も返すな。俺が話す』<br>「東階段が塞がってたこと、知ってた？」</p>
+<p class="narration">沈黙が、返事より先に来た。</p>
+<p class="narration">『お前が修正しようとしたデータを、俺が戻した』</p>
+<p class="narration">僕は去年の深夜を思い出した。<br>気になって〈東階段使用可〉を消した校正。朝には、元の版で刷られていた。<br>自分の保存ミスだと思った。そう思う方が楽だった。</p>
+<p class="narration">『荒瀬さんに、当日までには空けるって言われた。差し替えたら金もかかる。うちはあそこの仕事が切れたら――』<br>「律さんが歩けなくなっても？」</p>
+<p class="narration">言ってから、隣に澪がいることを思い出した。<br>父を刺すために、律の脚を使った。</p>
+<p class="narration">『明日、通帳を持って行く。お前は署名なんかするな』<br>「今夜の話だよ」</p>
+<p class="narration">父はようやく、僕の話を最後まで聞いた。<br>脅迫の画像を送った。父から返ってきたのは、荒瀬との古いメールの転送だった。<br>〈階段の件、了承。御社の指示どおり原版維持〉。</p>
+<p class="narration">『これで、俺も知らなかったとは言えない』</p>
+<p class="narration">今さらだ、と思った。<br>それでも、保存した。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N05">21:09　十八秒の彼女</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;father_record&quot;: true}</pre></details></div></section>
+<section id="scene-N04S"><div class="scene-label">N04S</div><h3>21:01　知らない字</h3><div class="prose"><p class="spoken">「封筒、見せて」</p>
+<p class="narration">紗季がコートから出したのは、角の折れた茶封筒だった。<br>中には複写式の搬入票が二枚と、僕の直した案内図。<br>東階段の注意書きに、赤いバツが引かれている。</p>
+<p class="narration">〈先方了承済。元版で進行〉</p>
+<p class="narration">父の字だった。<br>小学校の連絡帳も、その丸い字だった。</p>
+<p class="narration">僕は電話をかけようとして、やめた。<br>いま声を聞いたら、たぶん、事情を聞きたくなる。<br>従業員の給料のこと。借金のこと。僕の学費のこと。<br>その順番で聞いたら、律のことが最後になる。</p>
+<p class="spoken">「持ち出したの、ばれてるんだよね」<br>「うん。倉庫のカメラに映ってる」<br>「だから逃げてきた？」</p>
+<p class="narration">紗季は首を横に振りかけて、やめた。</p>
+<p class="spoken">「最初は。でも、ここまで来たら、湊がまだ普通に私を入れてくれて」</p>
+<p class="narration">傷のない方の手で、鞄の持ち手を強く握った。</p>
+<p class="spoken">「それが嬉しくて、余計に言えなくなった」</p>
+<p class="narration">僕は赤いバツの上に手を置いた。<br>父の弁解を聞かずに進む。それも僕の選択だった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N05">21:09　十八秒の彼女</a></p></div></section>
+<section id="scene-N05"><div class="scene-label">N05</div><h3>21:09　十八秒の彼女</h3><div class="prose"><p class="narration">澪がレコーダーを再生した。<br>ざらつく音の奥で、去年の僕が息を切らしていた。</p>
+<p class="narration">『律さん、まだ中に――』</p>
+<p class="narration">そこで音が跳んだ。</p>
+<p class="narration">『もう無理だ。置いて行こう』</p>
+<p class="narration">最後は、間違いなく僕の声だった。<br>聞いたことのない順番で、僕の言葉が並んでいた。</p>
+<p class="spoken">「これが、荒瀬に渡った音声」</p>
+<p class="narration">澪が停止ボタンを押した。</p>
+<p class="spoken">「紗季が編集した。私に渡すために」</p>
+<p class="narration">紗季は否定しなかった。</p>
+<p class="spoken">「湊が中へ戻ろうとして、私が止めたところを切った。私の声を消そうとして、前後を繋いだ」<br>「どうして」<br>「澪に、私が湊を助けたせいで律さんが、って思われたくなかった」</p>
+<p class="narration">澪は口を開けたまま、しばらく何も言わなかった。</p>
+<p class="spoken">「私のためって、ずっと言ってたよね」<br>「うん」<br>「私が聞いたら傷つくから、って」<br>「……うん」</p>
+<p class="narration">澪が椅子を蹴った。<br>倒れた椅子を、自分で起こした。</p>
+<p class="spoken">「ごめん。椅子には」</p>
+<p class="narration">僕は何を言えばいいのかわからなかった。<br>紗季が僕を守った話ではなかった。澪を守った話でもなかった。<br>二人の間で自分が嫌われないために、紗季は僕の声を切った。</p>
+<p class="spoken">「そのファイルを私が荒瀬に送った」</p>
+<p class="narration">澪が言った。</p>
+<p class="spoken">「工事の責任を認めろって。あいつが持ってる音声は、私が渡した」</p>
+<p class="narration">僕の声は、二人の手を一回ずつ通って、脅迫状になっていた。</p>
+<p class="spoken">「原本は？」</p>
+<p class="narration">紗季がレコーダーの電池蓋を外した。<br>小さなメモリーカードが、テープで裏に貼られていた。</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-N06R">原本を複製して、音声を最初から聞く <span>→ N06R</span></a></li><li><a href="#scene-N06S">先に紗季と二人で話す。原本は封筒に戻す <span>→ N06S</span></a></li></ol></div></section>
+<section id="scene-N06R"><div class="scene-label">N06R</div><h3>21:16　置いて行ったもの</h3><div class="prose"><p class="narration">机のノートパソコンにカードを挿した。<br>音声をコピーし、紗季と澪にも渡した。澪は接続を切ってから、三人のフォルダを指で数えた。</p>
+<p class="spoken">「一個なくしても、なくならないね」</p>
+<p class="narration">原本は十八秒ではなく、二十七分あった。<br>最後の方で火災報知器が鳴った。</p>
+<p class="narration">『律さん、まだ中にいる』<br>『消防の人が行った！　湊、あんたは戻らないで！』</p>
+<p class="narration">紗季の声が裏返っていた。<br>僕は咳をしていた。ひどい音だった。</p>
+<p class="narration">『冊子、机に全部――』<br>『もう無理だ。置いて行こう』</p>
+<p class="narration">置いて行ったのは、本だった。<br>二人で半年かけて作って、ほとんど売れず、最後に火に残した本。</p>
+<p class="narration">再生が終わっても、紗季は顔を上げなかった。</p>
+<p class="spoken">「このまま出せばよかったんだね」</p>
+<p class="narration">澪が言った。</p>
+<p class="spoken">「そうだよ」</p>
+<p class="narration">短すぎる返事だった。<br>紗季が何か言いかけたけれど、澪は続きをくれなかった。</p>
+<p class="narration">僕は音声を少し巻き戻した。<br>避難が始まる前に、荒瀬の声が入っていた。</p>
+<p class="narration">『東は開けるな。資材が崩れる。客は正面だけで回せ』</p>
+<p class="narration">誰も知らなかった事故ではなかった。<br>知っていた人が、何人もいた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N07">21:28　脅迫者の名前</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;backup&quot;: true}</pre></details></div></section>
+<section id="scene-N06S"><div class="scene-label">N06S</div><h3>21:16　触っていい人</h3><div class="prose"><p class="spoken">「五分だけ、紗季と話したい」</p>
+<p class="narration">澪は僕らを見比べて、玄関へ行った。</p>
+<p class="spoken">「下でタクシー呼ぶ。二人で話を合わせるなら、もっとかかる？」<br>「そういうんじゃない」<br>「そうだったら、そう言わないでしょ」</p>
+<p class="narration">ドアが閉まった。<br>紗季が笑いかけて、途中でやめた。</p>
+<p class="spoken">「今、二人にしてくれたの、嬉しいって思っちゃった」</p>
+<p class="narration">僕は彼女の右手を見た。<br>血は止まっていた。</p>
+<p class="spoken">「別れようって、本気？」<br>「湊が全部知る前に、私から言いたかった」<br>「僕が振るのは嫌だった？」</p>
+<p class="narration">紗季は泣かなかった。</p>
+<p class="spoken">「うん。それもある」</p>
+<p class="narration">その返事に、少しだけ彼女を取り戻した気がした。<br>きれいに説明する紗季ではなく、図々しくて、怖がりで、僕が好きだった人。</p>
+<p class="spoken">「手、握っていい？」</p>
+<p class="narration">紗季が聞いた。<br>僕は左手を出した。<br>指が入ってきた。いつもと同じ場所に、爪が当たった。</p>
+<p class="narration">抱きしめたら、この話を止められる。<br>一瞬、本気でそう思った。</p>
+<p class="narration">玄関の外で、澪がノックした。<br>僕は手を離し、カードの入った封筒を持った。<br>コピーはあとで取るつもりだった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N07">21:28　脅迫者の名前</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;saki_hold&quot;: true}</pre></details></div></section>
+<section id="scene-N07"><div class="scene-label">N07</div><h3>21:28　脅迫者の名前</h3><div class="prose"><p class="narration">タクシーの後部座席で、僕はスマホを澪に向けた。</p>
+<p class="spoken">「最初の写真も荒瀬から？」</p>
+<p class="narration">澪は画面を見た。<br>目を閉じ、頭をヘッドレストにぶつけた。</p>
+<p class="spoken">「それ、私」</p>
+<p class="narration">運転手がミラーを見た。<br>僕は声を落とせなかった。</p>
+<p class="spoken">「おまえだけが恋人のつもりだ、って？」<br>「うん」<br>「なんでそんなことするんだよ」</p>
+<p class="spoken">「普通に言っても、湊は紗季に聞く。紗季が大丈夫って言ったら、それで終わる。私の話、最後まで聞かない」</p>
+<p class="narration">澪は写真の送り元をタップした。<br>別の番号だった。荒瀬のメッセージと、通知の並びで一つに見えていた。</p>
+<p class="spoken">「前に使ってた番号。契約、まだ切ってない」<br>「写真は」<br>「律を迎えに来た従兄が撮った。私が切った。誤解するように」</p>
+<p class="narration">紗季が窓を向いた。</p>
+<p class="spoken">「私の編集、あんなに怒ったのに」<br>「うん。やったあとで、同じことしたって思った」</p>
+<p class="narration">澪の手が膝の上で震えた。</p>
+<p class="spoken">「姉のことを使えば、好きな人の恋人を傷つけてもいいって、どこかで思った」</p>
+<p class="narration">僕は聞き間違いを探した。<br>好きな人。</p>
+<p class="spoken">「いま告白すんなよ」</p>
+<p class="narration">出てきたのは、それだけだった。</p>
+<p class="spoken">「してない。最低なことした理由を言ってる」</p>
+<p class="narration">澪は僕を見なかった。<br>紗季が窓に映った僕の顔を見ていた。</p>
+<p class="narration">タクシーが信号で止まった。<br>三人とも、降りた方がいいような気がした。<br>誰も降りなかった。</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-N08M">「写真のことは許せない。でも今夜は一緒にやる」と澪に伝える <span>→ N08M</span></a></li><li><a href="#scene-N08R">澪と距離を置き、律本人に連絡してもらう <span>→ N08R</span></a></li></ol></div></section>
+<section id="scene-N08M"><div class="scene-label">N08M</div><h3>21:36　好きなら、なおさら</h3><div class="prose"><p class="spoken">「写真のことは許せない」</p>
+<p class="narration">澪は小さく頷いた。</p>
+<p class="spoken">「でも、今夜は一緒にやる。律さんのことも、僕のことも、勝手に決めないでくれ」<br>「わかった」<br>「好きだったら、なおさら」</p>
+<p class="narration">言ってから、紗季の前だと思い出した。<br>紗季は窓の曇りを手の甲で拭いていた。</p>
+<p class="narration">澪が僕のスマホを返すとき、指輪を一緒に載せた。</p>
+<p class="spoken">「律、ずっと返したかったって。あの日、あんたが手を引いてくれたところまでは覚えてる」</p>
+<p class="narration">僕は煙の中を思い出した。<br>指から何かが抜けた感触だけを覚えていた。</p>
+<p class="spoken">「病院に行ったとき、なんで帰した」</p>
+<p class="narration">澪の口元が歪んだ。</p>
+<p class="spoken">「律があんたをかばうの、聞きたくなかった。怒ってる人が誰もいなくなったら、あの日が終わっちゃう気がして」</p>
+<p class="narration">指輪をはめようとした。節で止まった。<br>去年より少し、指が太くなっていた。</p>
+<p class="narration">澪はそれを見て泣きそうになった。<br>理由を、僕は聞かなかった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N09">21:51　祝福の裏口</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;mio_trust&quot;: true}</pre></details></div></section>
+<section id="scene-N08R"><div class="scene-label">N08R</div><h3>21:36　本人の席</h3><div class="prose"><p class="narration">僕は澪から一人分、体を離した。</p>
+<p class="spoken">「律さんに話したい」<br>「今、疲れてる時間だから」<br>「話せるかどうかを、本人に聞いて」</p>
+<p class="narration">澪は返事をしなかった。<br>長く画面を見てから、電話をかけた。</p>
+<p class="narration">『何。三人とも死にそうな顔して』</p>
+<p class="narration">律はビデオ通話に出た。<br>病院ではなく、自宅のソファだった。膝には猫がいた。</p>
+<p class="narration">『私の件なら、今、猫より優先する』</p>
+<p class="narration">澪が笑い、すぐに顔を歪めた。<br>僕は案内図のことから話した。音声のこと。今夜の呼び出し。</p>
+<p class="narration">律は猫を床へ下ろした。</p>
+<p class="narration">『湊。あんたに引っ張られたとき、私、腕が抜けるかと思った』<br>「すみません」<br>『あれは助けようとしてたんでしょ。案内図は腹立つ。助けに来たことまで消さないで』</p>
+<p class="narration">初めて聞く、律自身の怒りだった。<br>僕らが想像していたものより、ずっと細かく分かれていた。</p>
+<p class="narration">『診療の記録とか、住所は出さないで。私の話は私が書く。今から送る。澪、一文字でも勝手に切ったら、今度こそ怒るよ』</p>
+<p class="narration">澪は小さく、はい、と言った。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N09">21:51　祝福の裏口</a></p><details class="tech"><summary>制作管理情報：履歴更新</summary><pre>{&quot;witness&quot;: true}</pre></details></div></section>
+<section id="scene-N09"><div class="scene-label">N09</div><h3>21:51　祝福の裏口</h3><div class="prose"><p class="narration">ホテルのロビーには、卒業生の名前が金色の文字で並んでいた。<br>僕の名前もあった。<br>紗季が、その前を少し早く歩いた。</p>
+<p class="narration">荒瀬は控室Ｂでサンドイッチを食べていた。<br>僕らが入ると、指先のパン屑を皿に落とした。</p>
+<p class="spoken">「若い子は、メッセージだと話を大きく取るから」</p>
+<p class="narration">机には、三人分の書類が揃っていた。<br>僕には火災の声明。<br>紗季には、音声を単独で偽造したという確認書。<br>澪には、荒瀬への謝罪と撤回。</p>
+<p class="narration">どれか一人が署名すれば、他の二人の書類は破棄する。<br>そう説明された。</p>
+<p class="spoken">「責任を取る人がいないと、助ける方も動けない」</p>
+<p class="narration">荒瀬は僕の前に、父の印刷所への発注書を置いた。<br>半年分だった。</p>
+<p class="spoken">「君が社会に出てから考えればいい。親御さんが何人の生活を抱えてるか」</p>
+<p class="narration">紗季が搬入票を出した。</p>
+<p class="spoken">「先に、これの説明をしてください」</p>
+<p class="narration">荒瀬の顔から、親しげなものが消えた。<br>紙を受け取るふりをして、封筒ごと引いた。<br>澪が手首をつかんだ。水のグラスが倒れた。</p>
+<p class="narration">封筒の中身が机に散った。<br>メモリーカードが滑り、荒瀬の靴の下へ落ちた。</p>
+<p class="narration">ぱき、と音がした。</p>
+<p class="narration">事故みたいな顔で、荒瀬が足をどけた。</p>
+<p class="spoken">「落とすからだ」</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：backup = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">紗季が息を呑んだ。<br>僕は机の下で、彼女の左手の甲を二度叩いた。<br>コピーがある。<br>彼女はその意味がわかるまで、僕を見ていた。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">僕は割れたカードを拾った。<br>コピーを取っていない。あとでやるつもりだった。<br>端子の横を、白い亀裂が走っていた。<br>紗季が、僕の顔を見て何かを悟った。<br>「私と話したから」と言いかけたので、僕は首を振った。<br>その五分を選んだのは、僕だ。</p><p class="variant-label ui">履歴差分ここまで</p></div></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N10">22:03　誰を売る</a></p></div></section>
+<section id="scene-N10"><div class="scene-label">N10</div><h3>22:03　誰を売る</h3><div class="prose"><p class="narration">荒瀬がボールペンを置いた。</p>
+<p class="spoken">「お互いに失敗はある。私も言い方が悪かった」</p>
+<p class="narration">澪がポケットのスマホを出した。<br>録音中の赤い表示があった。</p>
+<p class="spoken">「今のも失敗ですか」</p>
+<p class="narration">荒瀬の目が動いた。<br>初めて、僕たち三人を数え直したように見えた。</p>
+<p class="spoken">「それを公開して、誰が君たちを雇うんだ」</p>
+<p class="narration">紗季が僕の前の書類を取った。</p>
+<p class="spoken">「私が音声を切ったのは本当です。私が署名すれば、湊の声明は出さないんですね」</p>
+<p class="spoken">「紗季」</p>
+<p class="narration">呼ぶと、彼女は僕を見た。<br>さっきの部屋で、左手を差し出したのと同じ顔だった。</p>
+<p class="spoken">「私がやったことだから」</p>
+<p class="narration">確認書には、音声の編集だけでなく、搬入票の偽造まで書いてあった。<br>本当の罪を入口にして、嘘の罪が続いていた。</p>
+<p class="narration">荒瀬が別の紙も出した。<br>三人全員が今夜の件を口外しないなら、声明も確認書も使わないという合意書。</p>
+<p class="spoken">「君たちは、明日ちゃんと卒業すればいい」</p>
+<p class="narration">隣の宴会場から拍手が聞こえた。<br>誰かの前途が、祝福されていた。</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-E01">三人で黙る取引を選ぶ <span>→ E01</span></a></li><li><a href="#scene-E02">紗季が署名するのを止めない <span>→ E02</span></a></li><li><a href="#scene-N11">「誰も署名しない」。書類を撮り、部屋を出る <span>→ N11</span></a></li></ol></div></section>
+<section id="scene-E01"><div class="scene-label">E01</div><h3>結末　明日も恋人</h3><div class="prose"><p class="narration">僕が最初に名前を書いた。<br>紗季は僕の署名を見てから、自分の名前を書いた。<br>澪はペンを握ったまま、何度も窓の方を見た。</p>
+<p class="spoken">「律には、私が言う」</p>
+<p class="narration">そう言って、最後に書いた。<br>荒瀬は書類を回収した。脅迫に使った文書を目の前で破った。<br>コピーが残っていないか、僕らは聞かなかった。</p>
+<p class="scene-break">＊</p>
+<p class="narration">卒業式の日は晴れた。<br>父の印刷所から届いた式次第は、よく乾いていて、指にインクがつかなかった。</p>
+<p class="narration">紗季が僕のネクタイを直した。<br>手にはまだ絆創膏があった。</p>
+<p class="spoken">「似合ってる」<br>「そっちも」</p>
+<p class="narration">澪は写真に入らなかった。<br>姉の迎えがある、と言った。嘘かどうかを確かめる資格を、昨夜、手放した気がした。</p>
+<p class="narration">四月からも、紗季と電話をした。<br>今日は何を食べた。仕事はどう。次はいつ会える。<br>別れ話は、なかったことになった。</p>
+<p class="narration">五月、父が新しい印刷機を入れた。<br>資金の一部は、荒瀬の会社からの前払いだった。<br>手伝いに行くと、僕の机が用意されていた。</p>
+<p class="narration">その帰り、紗季が部屋に来た。<br>僕たちは抱き合った。彼女の髪が頬に触れた。好きだと思った。本当に思った。</p>
+<p class="spoken">「ねえ」</p>
+<p class="narration">紗季が僕の胸に顔をつけたまま言った。</p>
+<p class="spoken">「私たち、別れても大丈夫かな」</p>
+<p class="narration">恋人でいるうちは、お互いが何を黙っているかわかる。<br>それがなくなったら。</p>
+<p class="narration">僕は答える代わりに、腕に力を入れた。<br>紗季も、同じ強さで抱き返した。</p>
+<p class="ending-line">―― END「明日も恋人」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section>
+<section id="scene-E02"><div class="scene-label">E02</div><h3>結末　きみが選んだこと</h3><div class="prose"><p class="narration">紗季のペンが紙に触れた。<br>僕は止めなかった。</p>
+<p class="narration">一文字目。二文字目。<br>僕が黙っていた時間が、彼女の名前になった。</p>
+<p class="spoken">「湊」</p>
+<p class="narration">澪が呼んだ。<br>振り向けば、何かをしなければならなかった。<br>僕は紗季の手を見ていた。</p>
+<p class="narration">荒瀬は僕の声明を破った。<br>紗季の確認書を、クリアファイルに入れた。</p>
+<p class="spoken">「これで君の問題は終わりだ」</p>
+<p class="narration">その「君」に、紗季は入っていなかった。</p>
+<p class="scene-break">＊</p>
+<p class="narration">紗季は卒業式に来なかった。<br>翌週、就職先と話し合うため、予定より早く県外へ行った。<br>ネットに出た短い記事では、〈学生が資料を改変〉と書かれていた。<br>避難口の前に資材が積まれていた件は、一行しかなかった。</p>
+<p class="narration">僕は三度、電話をした。<br>三度目に紗季が出た。</p>
+<p class="narration">『私が選んだことだから、って言おうとした？』</p>
+<p class="narration">本当に、その文を考えていた。</p>
+<p class="narration">『言わなくていい。今それ聞いたら、好きだったことまで嫌になる』</p>
+<p class="narration">受話器の向こうで、駅の案内が流れた。</p>
+<p class="spoken">「訂正する。全部、話す」<br>『私に言う前に、やって』</p>
+<p class="narration">電話は切れた。<br>僕は文章を書き始めた。ホテルで、署名の手が止まらなかった理由を。<br>自分の名前が消えるのを見て、ほっとしたことまで。</p>
+<p class="narration">送信先に、まず澪の名前を入れた。<br>それで何かが戻るとは、もう書けなかった。</p>
+<p class="ending-line">―― END「きみが選んだこと」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section>
+<section id="scene-N11"><div class="scene-label">N11</div><h3>22:12　扉を開ける人</h3><div class="prose"><p class="narration">僕は署名欄を手で覆った。</p>
+<p class="spoken">「誰も書かない」</p>
+<p class="narration">書類を撮った。荒瀬はスマホに手を伸ばしたが、澪が扉を開けた。<br>廊下にいたホテルのスタッフが、こちらを見た。</p>
+<p class="spoken">「私たち、帰ります。出口まで来てもらえますか」</p>
+<p class="narration">澪の声は驚くほど普通だった。<br>荒瀬は、もう手を伸ばさなかった。</p>
+<p class="narration">ロビーで紗季が足を止めた。<br>椅子に座ろうとして、座る前に膝が折れた。<br>僕と澪が両側から支えた。</p>
+<p class="spoken">「ごめん。ずっと立ってたら、大丈夫な気がしてた」</p>
+<p class="narration">売店で水と小さなチョコを買った。<br>澪は包みを開けられず、紗季に渡した。<br>紗季は怪我をした手を見せた。<br>二人が僕を見た。</p>
+<p class="narration">僕が開けたチョコを、三人で食べた。<br>口の中に甘いものが入ると、吐きそうだったのが少し治まった。</p>
+<p class="spoken">「一個じゃ少なかったな」<br>「この状況で割り勘する？」と澪が言った。<br>「領収書あるよ」</p>
+<p class="narration">紗季が変な声で笑った。<br>澪も笑って、すぐに目元を拭いた。</p>
+<p class="narration">僕のスマホが鳴った。</p>
+<p class="spoken">《23時に声明を出す。残り48分》</p>
+<p class="narration">笑いが止まったあとも、甘さは残っていた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N12">22:19　取り返せない五分</a></p></div></section>
+<section id="scene-N12"><div class="scene-label">N12</div><h3>22:19　取り返せない五分</h3><div class="prose"><p class="narration">ホテルの向かいのファミリーレストランに入った。<br>澪が充電器を広げ、紗季がテーブルに搬入票を置いた。<br>原本はホテルで回収した。水で端が波打っていたが、会社名と日付は読めた。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：backup = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">原本のコピーを、三台でもう一度開いた。<br>火事の中の会話。荒瀬が東階段を使わせなかった指示。<br>紗季が切った位置を、再生時間とともに書き出した。<br>同じ声でも、前後があれば別の意味になる。今回は前後ごと残せる。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">割れたカードを挿しても、パソコンは反応しなかった。<br>紗季が、去年の会話を覚えている範囲で書いた。<br>「置いて行こうって言ったのは、本のこと。私が冊子を取りに戻ろうとしたから」<br>僕もそこを思い出した。でも、二人の記憶を原本の音声だとは言えない。<br>カードは修復できるかもしれない。今夜は確かめられない。<br>証拠の欄に入れかけた文章を、証言の欄へ移した。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：father_record = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">父から受け取ったメールも添えた。<br>原版を戻したことを、父自身が説明している。僕だけを外して済む記録ではなかった。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">搬入票と父の赤字は撮影できたが、父自身の説明はなかった。<br>〈荒瀬の指示で戻した〉と断言しかけて、消した。そこは、父に答えてもらうしかない。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">今夜の録音と、脅迫のメッセージと、署名を切り貼りした文書。<br>それらは残っている。<br>でも、去年の出来事のどこまでを説明できるかは、同じではなかった。</p>
+<p class="spoken">「荒瀬を黙らせる文章と、自分のしたことを書く文章って、違うね」</p>
+<p class="narration">紗季が言った。<br>僕のノートパソコンには、〈僕は犯人ではありません〉とだけ入力されていた。</p>
+<p class="narration">澪はその一行を読んだ。</p>
+<p class="spoken">「その先は？」</p>
+<p class="narration">僕は削除キーを押した。<br>〈僕は避難案内を作りました。階段を確認しませんでした〉。<br>書き直すと、二行目に進めた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N13">22:31　律の写真</a></p></div></section>
+<section id="scene-N13"><div class="scene-label">N13</div><h3>22:31　律の写真</h3><div class="prose"><p class="narration">澪は、荒瀬を告発するためのフォルダを作っていた。<br>診療の書類、病室の律、火傷の経過、家族のやり取り。<br>スクロールしても終わらなかった。</p>
+<p class="spoken">「全部見せれば、嘘じゃないってわかる」</p>
+<p class="narration">画面には、律が食事をこぼして泣いている動画があった。<br>澪が指を止めた。</p>
+<p class="spoken">「これは……違うか」</p>
+<p class="narration">動画の中の律は、カメラに気づいていない。<br>言い返せない姉の姿ほど、人は自分たちに同情するだろう。<br>そのことを、三人ともわかっていた。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：witness = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">律から文章が届いた。<br>〈私の怪我が、誰かの都合のいい写真になるのは嫌です。階段で何が起きたかを、調べてください〉<br>公開してよい文章と、公開しないでほしい記録が、別々に指定されていた。<br>澪はフォルダを二つに分けた。元のフォルダも、まだ画面に残っている。</p><p class="variant-label ui">条件を満たさない場合</p><p class="spoken">「律さん、これ、公開していいって？」<br>僕が聞くと、澪は首を横に振った。<br>「資料を集めてるのは知ってる。でも、これ全部は見せてない」<br>本人の説明を聞いていないまま、僕らの締切だけが迫っていた。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">紗季が机にスマホを置いた。<br>県外の就職先から、明日の打ち合わせの確認が来ていた。</p>
+<p class="spoken">「私、全部話す。編集した理由も、湊に黙ってたことも」</p>
+<p class="narration">澪が頷いた。</p>
+<p class="spoken">「写真を送ったのは私だって、私から言う」</p>
+<p class="narration">二人が僕を見た。<br>一年前と同じように、何かを印刷する前の机だった。<br>今度は、僕が確認する番だった。</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-E03">元のフォルダをそのまま公開する。今すぐ注目を集める <span>→ E03</span></a></li><li><a href="#scene-N14">律の私的記録を外し、確認できる資料と自分たちの説明を届ける <span>→ N14</span></a></li></ol></div></section>
+<section id="scene-E03"><div class="scene-label">E03</div><h3>結末　正しい炎上</h3><div class="prose"><p class="narration">僕は元のフォルダを公開した。<br>画像の数が多いので、処理に時間がかかった。<br>途中で澪が「あ」と言った。止めるボタンを探している間に、完了した。</p>
+<p class="narration">律の住所。患者番号。泣いている動画。<br>資料の中にあったものが、そのまま、誰でも保存できるものになった。</p>
+<p class="narration">通知が増えた。<br>名前の知らない人が、荒瀬を罵り、僕たちを励ました。<br>怒ってくれる人がいる。それが気持ちよかった。<br>気持ちいいと気づいたときには、もう何度も画面を更新していた。</p>
+<p class="narration">荒瀬の声明も出た。<br>ネットには二つの説明が並び、人は好きな方を短く切り取った。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：backup = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">原本の音声があったため、切られた会話はすぐ比較された。<br>僕が律を置いて行けと言った、という話は崩れた。<br>その訂正と一緒に、律の病室の動画も広まった。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">原本の音声がないことを指摘され、僕らの記憶は言い逃れだと呼ばれた。<br>そのたびに、より痛々しい律の写真が、反論の代わりに共有された。<br>彼女の怪我が、僕の無実を主張する道具になった。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">二十三時十一分。律から電話が来た。<br>澪は立ち上がって、店の外へ行った。<br>ガラス越しに、何度も頭を下げるのが見えた。</p>
+<p class="narration">戻ってきた澪は、僕を見なかった。</p>
+<p class="spoken">「猫の名前まで、知らない人から来たって」</p>
+<p class="narration">公開を止めた。<br>止める前に、誰かが保存していた。</p>
+<p class="scene-break">＊</p>
+<p class="narration">六月、大学が避難経路の管理について説明する会を開いた。<br>律は来なかった。<br>大勢の人が彼女のために怒った。彼女の席だけ、空いていた。</p>
+<p class="narration">僕たちは一列に座ったが、帰りは三方向に別れた。<br>紗季に好きだと言うには、先にしなければならない話が多すぎた。<br>澪からは、資料を削除してもらう連絡先だけが届いた。</p>
+<p class="narration">律が後日送ってきた短い文を、僕は消せずにいる。</p>
+<p class="spoken">《荒瀬には、階段を塞がれた。あなたたちには、部屋のカーテンを開けられた》</p>
+<p class="narration">あの夜いちばん広まった投稿には、今も僕の名前がある。<br>〈勇気ある告発〉と書かれている。</p>
+<p class="ending-line">―― END「正しい炎上」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section>
+<section id="scene-N14"><div class="scene-label">N14</div><h3>22:46　送る前の名前</h3><div class="prose"><p class="narration">律の私的な記録を、公開用のフォルダから外した。<br>搬入票、案内図、今夜の脅迫、三人それぞれの説明。<br>連絡先や他人の住所が入るものは、提出用と公開用を分けた。</p>
+<p class="narration">澪が、前に律の件を取材した地元紙の記者へ電話した。<br>紗季は大学の窓口に送る文面を書いた。<br>僕は今夜の脅迫とホテルでされたことを、警察に相談するために時刻順に並べた。</p>
+<p class="narration">誰か一人へ渡したら終わり、とは思えなかった。<br>送った資料と、送った時刻を、三人の端末に残した。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：witness = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">律の文章は、指定された範囲だけをそのまま添えた。<br>澪は一度、姉らしくない硬い言い回しを直そうとして、手を止めた。<br>「これでいいんだよね」<br>僕ではなく、律へ確認を送った。返事は、〈それでいい〉だった。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">律本人の説明は、まだない。<br>〈被害者も公開を望んでいます〉という一文を削除した。<br>本人がどう考えているかは、本人が答えるまで空欄にした。<br>澪は律へ、今夜したことと、外した資料の一覧を送った。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">公開する文章には、僕の名前を最初に書いた。<br>次に、自分がしたこと。<br>誰かにされたことは、そのあとに置いた。</p>
+<p class="spoken">「送るよ」</p>
+<p class="narration">僕が言うと、紗季が画面を指差した。</p>
+<p class="spoken">「ここ。私が編集したこと、受け身にしないで。音声が編集された、じゃなくて」</p>
+<p class="narration">〈紗季が編集しました〉。<br>本人が打ち直した。</p>
+<p class="narration">澪も、写真について自分の名前を入れた。</p>
+<p class="narration">送信ボタンを押した。<br>拍手も音楽もなかった。<br>店員が来て、空いた皿を下げていいか聞いた。</p>
+<p class="narration">僕たちは三人とも、はい、と答えた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N15">23:04　勝ったあとの夜</a></p></div></section>
+<section id="scene-N15"><div class="scene-label">N15</div><h3>23:04　勝ったあとの夜</h3><div class="prose"><p class="narration">荒瀬の声明は、予告どおり出た。<br>僕らが先に動いても、送信を止めることはできなかった。</p>
+<p class="narration">知らない人から連絡が来た。<br>本当なのか。大丈夫なのか。明日の式には来るのか。<br>僕たちは返せるものにだけ返した。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：backup = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">原本の音声を聞いた記者から、編集前後を確認したという連絡が来た。<br>それだけで全部の疑いが消えるわけではない。でも、僕が言っていない意味の言葉を、僕の告白として出し続けることは難しくなった。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">去年の音声については、原本を示せなかった。<br>割れたカードは保管し、復旧を相談することにした。今夜の録音と搬入票があるため、荒瀬の説明だけで話が終わるわけでもなかった。<br>ただ、僕の十八秒は、訂正されないまま広がった。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">記者から、翌朝、資料を見ながら話を聞きたいと返事が来た。<br>大学からは受領の連絡だけが来た。<br>今夜の脅迫について相談すると、メッセージや録音を消さずに、詳しい説明をする段取りになった。<br>荒瀬がその場で連れていかれるような展開は、起きなかった。</p>
+<p class="narration">父から電話が来た。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：father_record = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">『取引が止まるかもしれん』<br>父はそう言い、しばらく黙った。<br>『明日、俺も説明する。メールの元データも持っていく』<br>僕は、ありがとうとは言えなかった。<br>「待ってる」とだけ言った。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">『先に俺に聞けなかったのか』<br>僕は父の赤字の話をした。<br>父は怒り、否定しかけて、最後に、話が長くなると言った。<br>「長くても聞く。でも、元版を戻したことは、みんなに説明して」<br>父は返事をしなかった。通話時間だけが伸びていった。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">電話を切った僕に、紗季が何か言いかけた。<br>慰めなら今は受け取れないと思った。</p>
+<p class="spoken">「お金、足りる？　今日のタクシー、私、払ってない」</p>
+<p class="narration">僕は財布を見た。<br>二千円しかなかった。</p>
+<p class="spoken">「帰り、電車だな」</p>
+<p class="narration">澪が時刻表を開いた。<br>三人で画面を覗いた。<br>終電までは、まだ時間があった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-N16">23:38　今夜の返事</a></p></div></section>
+<section id="scene-N16"><div class="scene-label">N16</div><h3>23:38　今夜の返事</h3><div class="prose"><p class="narration">駅前の歩道橋で、紗季が立ち止まった。<br>澪は三段先で、こちらを向いた。</p>
+<p class="spoken">「最初に言ったこと、取り消さない」</p>
+<p class="narration">紗季が言った。</p>
+<p class="spoken">「別れよう。今までの続きに戻ったら、また、言えないことを溜める」</p>
+<p class="narration">僕は彼女の顔を見た。<br>昼間ならきれいに隠せたはずの疲れが、街灯の下では全部見えた。</p>
+<p class="spoken">「でも、まだ好き。そこまで嘘にしたくない」</p>
+<p class="narration">澪が階段を下りて、同じ高さまで来た。</p>
+<p class="spoken">「私も、なかったことにはしない。写真のことも、好きだって言ったことも」</p>
+<p class="narration">紗季が澪を見た。</p>
+<p class="spoken">「今だったら、勝てると思ってる？」<br>「思ってる自分が嫌で、黙れなかった」<br>「本当に、腹立つ」<br>「うん」</p>
+<p class="narration">二人とも、僕が次に言うことを待っていた。<br>抱きしめれば済む人はいない。<br>誰も選ばないことも、誰も傷つけないこととは違う。</p>
+<p class="narration">電車が橋の下を通った。<br>音で会話が途切れる、その数秒がありがたかった。<br>音がなくなった。</p></div><div class="manuscript-nav"><p class="nav-caption">ここで選択</p><ol class="all-choices"><li><a href="#scene-S01">紗季に「別れたあと、もう一度会いたい」と伝える <span>→ S01</span></a></li><li><a href="#scene-M01">澪に「今夜の続きではなく、二人で会いたい」と伝える <span>→ M01</span></a></li><li><a href="#scene-U01">二人に「今は、誰とも付き合わない」と伝える <span>→ U01</span></a></li></ol></div></section>
+<section id="scene-S01"><div class="scene-label">S01</div><h3>翌朝　ほどいたあとで</h3><div class="prose"><p class="spoken">「別れよう」</p>
+<p class="narration">僕が言うと、紗季は唇を噛んだ。<br>自分で言い出したくせに、傷ついた顔をした。</p>
+<p class="spoken">「そのあとで、もう一度会いたい。今夜みたいに、全部聞かせて」</p>
+<p class="narration">紗季の視線が僕の手に落ちた。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：saki_hold = true</p><p class="variant-label ui">条件を満たす場合</p><p class="spoken">「さっき握ってくれたから、戻れるって思ってた」<br>紗季は自分の左手を見た。<br>「でも、それで許されたことにするの、もうやめる」<br>手は繋がなかった。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">紗季は手を伸ばしかけて、コートのポケットに戻した。<br>「今度、手を握りたくなったら、聞く」<br>「うん」<br>「断っても、帰らないでね」<br>その約束だけは、僕はすぐに頷けた。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">澪が手すりから離れた。</p>
+<p class="spoken">「わかった。私、反対側だから」</p>
+<p class="narration">笑おうとしたので、やめてくれと思った。<br>澪は笑わずに、「じゃあね」と言った。</p>
+<p class="scene-break">＊</p>
+<p class="narration">僕らは駅で別れ、翌朝、大学の門で会った。<br>紗季は卒業式の服で、僕は昨日と違うシャツを着ていた。</p>
+<p class="narration">一緒に歩いていると、知り合いが、まだ付き合ってたんだ、と言った。<br>紗季は「昨日、別れた」と答えた。</p>
+<p class="narration">僕は隣で、うん、と言った。<br>変な顔をされた。僕らもちょっと変だった。</p>
+<p class="narration">式のあと、資料を持って記者に会った。<br>紗季は、自分が編集した音声について、僕の顔を見ずに説明した。<br>僕も案内図について話した。<br>相手を助けるために説明を丸めなかったのは、初めてだった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-E04">結末　初めての二回目</a></p></div></section>
+<section id="scene-E04"><div class="scene-label">E04</div><h3>結末　初めての二回目</h3><div class="prose"><p class="narration">六月。紗季がこの街へ戻ってきた。<br>駅の改札で、僕は二十分待った。<br>電車が遅れたのではなく、紗季が一本乗り損ねた。</p>
+<p class="spoken">「寝坊した」<br>「仕事が長引いた、とかじゃなくて？」<br>「寝坊。昨日、楽しみで寝られなかった」</p>
+<p class="narration">僕は文句を言おうとして、失敗した。<br>紗季がそれを見て笑った。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：backup = true</p><p class="variant-label ui">条件を満たす場合</p><p class="narration">工事中の避難経路と、案内図がそのまま使われた経緯について、調査が続いている。<br>僕の音声は、編集前後を併記した訂正が出た。父の仕事は減った。僕は別の印刷所で働きながら、聞き取りに通っている。</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">去年のカードは、まだ音声を取り出せていない。<br>搬入票と今夜の録音から調査は続いているが、僕の発言についての誤解は残った。<br>紗季は、自分が切ったことと、切る前に何があったかを、尋ねられるたびに自分の言葉で説明している。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">澪とは、調査の進み具合を共有するときに連絡を取る。<br>三人の食事に誘うのは、まだできない。<br>紗季と歩くために、何も失わなかったわけではなかった。</p>
+<p class="narration">古本屋で、二人で作った冊子と同じ紙の本を見つけた。<br>紗季が指で背を撫でた。</p>
+<p class="spoken">「また作る？」<br>「火の出ない場所で」</p>
+<p class="narration">言った瞬間、まずいと思った。<br>紗季は笑わなかった。</p>
+<p class="spoken">「それ、まだ笑えない」<br>「ごめん」</p>
+<p class="narration">僕は本を棚に戻した。<br>気まずくなった。けれど紗季は店を出て行かなかった。<br>隣の棚で、料理の本を一冊手に取った。</p>
+<p class="narration">店を出たところで、紗季が言った。</p>
+<p class="spoken">「今日、恋人として来たつもりだった」</p>
+<p class="narration">僕は足を止めた。</p>
+<p class="spoken">「先に聞いてくれよ」<br>「今、聞いてる」</p>
+<p class="narration">好きだと思った。<br>昨日までと同じ人の、知らなかった顔ではない。<br>知ってしまった顔を、もう一度見たいと思った。</p>
+<p class="spoken">「僕も」</p>
+<p class="narration">紗季が左手を出した。<br>今度は、僕から握った。</p>
+<p class="ending-line">―― END「初めての二回目」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section>
+<section id="scene-M01"><div class="scene-label">M01</div><h3>翌朝　奪ったあとに残るもの</h3><div class="prose"><p class="spoken">「澪と、二人で会いたい」</p>
+<p class="narration">言った途端、紗季の顔が変わった。<br>さっきまで言い返していた人が、言葉を探せなくなった。</p>
+<p class="spoken">「わかった」</p>
+<p class="narration">わかっていない声だった。<br>僕はそれを訂正できなかった。</p>
+<p class="narration">澪は喜ばなかった。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：mio_trust = true</p><p class="variant-label ui">条件を満たす場合</p><p class="spoken">「写真がなかったら、今、同じこと言った？」<br>「わからない」<br>澪は顔を伏せた。<br>「そこ、嘘でも言ってほしかった。今も、そういうこと思う」<br>「だから、今夜の勢いで付き合うのは嫌だ。昼に会いたい」<br>澪は時間をかけて頷いた。</p><p class="variant-label ui">条件を満たさない場合</p><p class="spoken">「私のこと、まだ信用してないでしょ」<br>「してないところがある。でも、聞きたいこともある」<br>「じゃあ、一回会うだけ。付き合うって返事は、まだしないで」<br>澪が条件を決めた。僕はそれを受け入れた。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">紗季が僕の鞄から、自分の部屋の鍵を取った。<br>僕の手のひらに、僕の部屋の鍵を返した。</p>
+<p class="spoken">「明日の取材には行く。これは別の話だから」</p>
+<p class="narration">鍵は、返される直前まで彼女の手の中にあったので、温かかった。</p>
+<p class="scene-break">＊</p>
+<p class="narration">卒業式のあと、澪と大学の裏門で会った。<br>花束を持っていた。僕にではなく、律に渡すものだった。</p>
+<p class="spoken">「今日、二人で会うって話だったけど、先に姉のところに行きたい」<br>「うん」<br>「湊も連れていっていいか、聞いた。本人に」</p>
+<p class="narration">僕は頷いた。<br>澪は花束を僕に持たせ、靴擦れした踵に絆創膏を貼った。<br>僕が知っている澪と、昨日まで知らなかった澪が、同じ人の中にいた。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-E05">結末　選ばれても、消えない</a></p></div></section>
+<section id="scene-E05"><div class="scene-label">E05</div><h3>結末　選ばれても、消えない</h3><div class="prose"><p class="narration">律の家で、猫に花束をかじられた。<br>澪は花を高い棚へ移し、僕に座布団を渡した。</p>
+<div class="variant-block"><p class="variant-label ui">本文の履歴差分：witness = true</p><p class="variant-label ui">条件を満たす場合</p><p class="spoken">「昨夜、勝手に私の話を出さなかったの、そこは助かった」<br>律は猫を抱き上げた。<br>「それと、湊に怒ってるのは別ね。座って。案内図、持ってきた？」</p><p class="variant-label ui">条件を満たさない場合</p><p class="narration">律は澪を見た。<br>「送ってくれた一覧、読んだ。私が何を出したいか、次は先に聞いて」<br>澪は頷いた。<br>律は僕にも同じことを言った。妹だけの落ち度にさせなかった。</p><p class="variant-label ui">履歴差分ここまで</p></div>
+<p class="narration">僕は案内図を見せた。<br>何を確認せず、何を言わなかったかを説明した。<br>律は全部聞いてから、「今日はそこまで」と言った。</p>
+<p class="narration">帰り、澪は僕と駅まで歩いた。<br>花を持っていた腕が空いて、どう置けばいいかわからないようだった。<br>僕は手を取らなかった。</p>
+<p class="scene-break">＊</p>
+<p class="narration">それから、何度も昼に会った。<br>六月、澪が大学院の設計課題を落としかけたときは、恋愛の話をする余裕が二人ともなかった。<br>僕は模型に触らせてもらえず、ひたすら台紙を切った。</p>
+<p class="spoken">「寸法、違う」<br>「一ミリだろ」<br>「一ミリを笑う印刷屋、嫌だな」</p>
+<p class="narration">僕が切り直すと、澪は自分の分も一枚、失敗していた。<br>隠そうとしたので、指差した。<br>澪は笑った。<br>僕はその顔を見て、今なら言えると思った。</p>
+<p class="spoken">「付き合ってほしい」</p>
+<p class="narration">澪はカッターを置いた。</p>
+<p class="spoken">「紗季と別れた日のこと、私は嬉しかったよ」<br>「うん」<br>「それも知ってて、言って」</p>
+<p class="narration">僕はもう一度言った。<br>澪は頷いて、泣いた。</p>
+<p class="narration">あの写真の件は消えない。紗季は僕たちに、おめでとうとは言わなかった。<br>調査の連絡が来る日は、今でも手が冷える。</p>
+<p class="narration">それでも澪といると、明日見せたいものが増えていく。<br>模型の窓に、小さなカーテンをつけた。<br>澪は下手だと言って、一つだけそのまま残した。</p>
+<p class="ending-line">―― END「選ばれても、消えない」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section>
+<section id="scene-U01"><div class="scene-label">U01</div><h3>翌朝　三人で帰らない</h3><div class="prose"><p class="spoken">「今は、誰とも付き合わない」</p>
+<p class="narration">口にすると、ほっとした。<br>その顔を、紗季に見られた。</p>
+<p class="spoken">「二人とも選ばなかったら、優しい人になれるわけじゃないからね」<br>「わかってる」<br>「わかってない顔だった」</p>
+<p class="narration">澪が俯いた。<br>僕は言い訳をやめた。</p>
+<p class="spoken">「紗季と別れるのが怖い。澪に好きだって言われて、嬉しかった。それを、今、答えにしたくない」</p>
+<p class="narration">二人は頷いてくれなかった。<br>紗季は鍵を返した。澪は指輪を返したことを、もう一度確認した。<br>それぞれの電車へ歩いた。</p>
+<p class="narration">一人になると、急に寒かった。<br>僕はコートの前を閉めた。</p>
+<p class="scene-break">＊</p>
+<p class="narration">翌朝、卒業証書を受け取った。<br>会場で紗季を見つけたが、手を振る前に彼女が目をそらした。<br>澪は友達と写真を撮っていた。</p>
+<p class="narration">僕は資料の入った鞄を持ち直した。<br>取材の約束には、三人とも時間どおりに来た。<br>隣に座っても、昨日の続きにはならなかった。</p></div><div class="manuscript-nav"><p class="jump-note">つづき：<a href="#scene-E06">結末　名前のある余白</a></p></div></section>
+<section id="scene-E06"><div class="scene-label">E06</div><h3>結末　名前のある余白</h3><div class="prose"><p class="narration">六月、印刷所で名刺を刷った。<br>僕の名刺だった。<br>父とは別の会社に就職した。昼休みに、火災の件の聞き取り日程を返した。<br>仕事と過去は、交代でやって来るわけではなかった。</p>
+<p class="narration">父とは日曜に会う。<br>荒瀬の仕事が減ったあと、どう店を続けるかを話す。<br>案内図のことを話す日もある。食事だけで終わる日もある。<br>親子をやめなかったから、説明を求めなくてよくなるわけではない。</p>
+<p class="narration">律には、自分が書いた説明を送った。<br>返事は一週間後だった。<br>〈確認しました。三段落目、私が階段へ向かった時刻が違います〉。<br>直して、もう一度送った。<br>許すとも、許さないとも書かれていなかった。</p>
+<p class="narration">紗季から、送る相手を間違えた写真が来た。<br>職場の近くのパン屋だった。<br>すぐ、〈ごめん、間違えた〉と来た。</p>
+<p class="narration">僕は〈うまそう〉と返した。<br>それで終わった。</p>
+<p class="narration">澪とは大学の展示で会った。<br>模型の脇に、彼女の名前が小さく印刷されていた。<br>僕は「名前、小さいな」と言った。</p>
+<p class="spoken">「自分のだから、わかる」</p>
+<p class="narration">少し話したあと、澪は友達のところへ戻った。<br>帰りの約束はしなかった。</p>
+<p class="narration">夜、引き出しから指輪を出した。<br>もう指には入らない。<br>名刺の箱の隣に置いた。</p>
+<p class="narration">スマホを開くと、空の入力欄があった。<br>寂しい、と打った。<br>誰に送るか決めずに書くと、少し違う言葉に見えた。</p>
+<p class="narration">その晩は送らなかった。<br>翌朝、自分の弁当を作った。<br>卵を焦がし、焦げた方を下にして詰めた。<br>食べるのは、自分だった。</p>
+<p class="ending-line">―― END「名前のある余白」</p></div><div class="manuscript-nav"><p class="jump-note">この経路は完結</p></div></section></section></main>
+<script id="scenario-data" type="application/json">{"schema_version":"2.0","title":"きみが選ばなかった言葉 — 卒業前夜、きみを売る","manuscript_version":"別バージョン第一稿・恋愛サスペンス","language":"ja","start_node":"N00","setting":"架空の地方都市。三月二十七日の夜から六月。湊・紗季・澪は22歳、律は澪の姉。AI設定なし。","ending_count":6,"flags":{"saki_hold":{"initial":false},"mio_trust":{"initial":false},"father_record":{"initial":false},"backup":{"initial":false},"witness":{"initial":false}},"nodes":[{"id":"N00","title":"20:41　別れる前に、隠して","text":"「別れよう」\n\n紗季はそう言ってから、僕の部屋の鍵を内側からかけた。\nチェーンまでかけた。\n\n「それ、帰る人の動きじゃないだろ」\n\n笑っていいのか迷っていた。紗季がコートを脱ぐまでは。\n白い袖口に血がついていた。\n\n「誰の」\n「私の。手、切っただけ」\n\n差し出された右手には、タオルが巻いてあった。赤い染みは小さい。小さいのを確認してから、僕はようやく息をした。\n三月二十七日。卒業式の前夜。\n二年付き合った恋人の手を、そんな順番で見た。\n\n「救急箱、まだ洗面所？」\n「うん。どうしたんだよ」\n「十分だけ。ここにいさせて」\n「別れたいのに？」\n\n紗季が答える前に、スマホが震えた。\n知らない番号から、写真が届いていた。\n\n駅前のホテル。エレベーターの前。\n紗季の頬を、澪が両手で包んでいる。\n紗季の首には、僕があげた細いネックレスが光っていた。\n\n《おまえだけが、まだ恋人のつもりだ》\n\n写真を拡大した。澪の口元と紗季の口元が重なって見える。その数ミリを、指で何度も広げた。\n\n「これ、何」\n\n紗季はスマホを受け取らなかった。\n\n「説明する。でも、今は」\n\nインターホンが鳴った。\nモニターの中で、澪が雨に濡れていた。\n僕の親友。紗季の親友。明日の式で、僕たちと写真を撮るはずの人。\n\n『湊。開けて』\n\n澪はカメラに向かって拳を開いた。\n手のひらに、銀の指輪があった。\n去年の火事でなくした、僕の指輪。\n\n『紗季がそこにいるなら、帰さないで』\n\n紗季が僕の腕をつかんだ。\n\n「いないって言って」\n\nドア一枚の向こうで、澪が続けた。\n\n『今夜、あんたが誰をかばうかで、一人、犯人になる』","kind":"scene","choices":[{"text":"紗季を隠し、澪と廊下で話す","target":"N01S"},{"text":"ドアを開けて、二人に同じ場所で説明させる","target":"N01M"}]},{"id":"N01S","title":"20:44　最初の共犯","text":"僕は紗季を洗面所に入れた。\nドアが閉まる寸前、彼女の指が僕の袖から離れた。\n\n「ありがとう、って言っていいのかわからない」\n「あとで説明して」\n\nチェーンを外し、廊下に出た。\n澪は僕の顔より先に、ドアの隙間を見た。\n\n「紗季は」\n「来てない」\n\n言葉にした途端、部屋の中で水が流れた。\n聞こえなかったふりをするには、澪は僕を知りすぎていた。\n\n「下手。こんなのに一年だまされてたの、腹立つな」\n\n澪が僕の手を取り、指輪を押し込んだ。\n内側の傷。自転車の鍵でつけた、いびつなＭ。\n間違いなかった。\n\n「律の荷物から出た。昨日、病院で返された」\n\n律。\n去年、旧学生会館の火事で大怪我をした、澪の姉。\n僕は一度だけ見舞いに行った。病室の前で、澪に帰された。\n\n「紗季を隠すのはいいよ。その代わり、最後まで聞いて」\n\n澪は声を落とした。\n\n「あんたの恋人、あの火事の録音を切ってる」\n\n僕は部屋のドアを開けた。\n今度は、二人とも入れた。","kind":"scene","next":"N02","effects":{"saki_hold":true}},{"id":"N01M","title":"20:44　三人分の逃げ場","text":"紗季の指を、一本ずつ腕から外した。\n\n「同じ説明をして。僕ら二人に」\n\nドアを開けると、澪は紗季を見て足を止めた。\n怒鳴ると思った。\n澪は鞄からハンカチを出して、紗季の右手に巻き直した。\n\n「それ、押さえてないと意味ない」\n「澪」\n「手は出して。話は別」\n\n慣れた手つきだった。\n僕は二人の間に割り込むみたいに、テーブルの椅子を引いた。\n\n「ホテルの写真、見た」\n\n澪の指が止まった。\n紗季ではなく、僕を見た。\n\n「どこまで届いてる？」\n「どこまでって何だよ」\n\n自分の声で、二人が同時に黙った。\nそれがいちばん嫌だった。僕にだけ聞かせない会話の続きが、二人の間にある。\n\n澪は指輪をテーブルに置いた。\n\n「これを紗季に見せたら、全部話すって約束した。だから来た」\n\n紗季は椅子に座らなかった。\n僕ら三人がよくカレーを食べたテーブルの前で、面接を受ける人のように立っていた。","kind":"scene","next":"N02","effects":{"mio_trust":true}},{"id":"N02","title":"20:49　口を塞いだ写真","text":"「キスはしてない」\n\n紗季は僕のスマホを指差した。\n\n「廊下で息ができなくなった。澪が、私の顔を上げた」\n「ホテルで何してた」\n「律さんの話を聞いてた。病院の外で会える日だったから」\n\n澪が自分のスマホを出した。\n同じ日、同じロビー。車椅子に座る律と、その横で笑おうとしている紗季。\n紗季の膝に、黒い小型レコーダーが載っている。\n\n「写真は誤解だよ」と澪が言った。\n「でも、湊に黙って会ってたのは本当。去年の秋から、何回も」\n\n僕は紗季を見た。\n秋。僕が泊まりに来てと言って、仕事が忙しいと断られた夜がいくつもあった。\n\n「火事の録音って？」\n\n紗季が答えるより早く、三台のスマホが同時に鳴った。\n送り主は、同じ番号だった。\n\n《今夜23時、中央ホテルの卒業祝賀会。控室Ｂ》\n《録音の原本と、学生会館の搬入票を持ってこい》\n《来なければ、この声明を大学と新聞社に送る》\n\n添付された文書の一行目を読んだ。\n\n〈旧学生会館火災に関して、私、湊は虚偽の避難案内を作成し、事故後、証拠の隠蔽を主導しました〉\n\n下に、僕の署名があった。\n大学の印刷室を使うために書いた申請書。その署名を切り抜いていた。\n\n「荒瀬さんだ」\n\n紗季が言った。\n大学の支援団体の代表。旧会館の改修を請け負った会社の社長。\n明日の卒業式では、学生に花を渡す人だ。\n\n僕は一行目をもう一度読んだ。\n全部が嘘なら、よかった。","kind":"scene","next":"N03"},{"id":"N03","title":"20:56　主人公のしたこと","text":"去年の三月。旧会館で最後の冊子展を開いた。\n僕と紗季が編集して、澪と律が会場を作った。僕の父の印刷所が、チラシを安く刷った。\n\n開催二日前、東階段が資材置き場になっているのを見つけた。\n非常口の前に石膏ボードが積んであった。\n\n荒瀬は言った。\n「当日には動かす。印刷はそのままでいい」\n\n僕は現地を確認せず、案内図に〈東階段使用可〉と入れた。\n納期に間に合ったので、父に褒められた。\n\n会場の奥で煙が出たとき、律はその地図を持って東階段へ走った。\n来場者を誘導するために。\n\n「僕が嘘の案内図を作ったのは、本当だ」\n\n声に出すと、紗季が目を閉じた。\n澪は目を閉じなかった。\n\n「それ、今、初めて私に言ったね」\n\n僕は頷くしかなかった。\n\n火の原因は、工事中の仮設配線だったと聞いた。\n僕が火をつけたわけじゃない。その一文だけを、一年、自分に言ってきた。\n\n「搬入票には、東階段に資材を置いた会社と日付が書いてある」\n\n紗季がコートの内ポケットを押さえた。\n\n「荒瀬さんが、今日、古い記録を処分するって聞いた。印刷所の倉庫に残ってる控えを取ってきた。割れた書類棚で、手を切った」\n「なんで僕に言わないんだよ」\n「言ったら、お父さんに確認するでしょ」\n\n父も知っている。\n紗季の言い方は、そうだった。\n\nスマホに新しい写真が来た。\n夜の印刷所。まだ点いている事務所の明かり。\n\n《お父さんは話が早かったぞ》","kind":"scene","choices":[{"text":"父に電話し、今夜のことを伝える","target":"N04F"},{"text":"父には知らせず、紗季の持ってきた封筒を開ける","target":"N04S"}]},{"id":"N04F","title":"21:01　父親の声","text":"父は一回目の呼び出しで出た。\n\n『お前、家にいるか』\n「荒瀬さんから連絡が来た」\n\n電話の向こうで、テレビの音が消えた。\n\n『何も返すな。俺が話す』\n「東階段が塞がってたこと、知ってた？」\n\n沈黙が、返事より先に来た。\n\n『お前が修正しようとしたデータを、俺が戻した』\n\n僕は去年の深夜を思い出した。\n気になって〈東階段使用可〉を消した校正。朝には、元の版で刷られていた。\n自分の保存ミスだと思った。そう思う方が楽だった。\n\n『荒瀬さんに、当日までには空けるって言われた。差し替えたら金もかかる。うちはあそこの仕事が切れたら――』\n「律さんが歩けなくなっても？」\n\n言ってから、隣に澪がいることを思い出した。\n父を刺すために、律の脚を使った。\n\n『明日、通帳を持って行く。お前は署名なんかするな』\n「今夜の話だよ」\n\n父はようやく、僕の話を最後まで聞いた。\n脅迫の画像を送った。父から返ってきたのは、荒瀬との古いメールの転送だった。\n〈階段の件、了承。御社の指示どおり原版維持〉。\n\n『これで、俺も知らなかったとは言えない』\n\n今さらだ、と思った。\nそれでも、保存した。","kind":"scene","next":"N05","effects":{"father_record":true}},{"id":"N04S","title":"21:01　知らない字","text":"「封筒、見せて」\n\n紗季がコートから出したのは、角の折れた茶封筒だった。\n中には複写式の搬入票が二枚と、僕の直した案内図。\n東階段の注意書きに、赤いバツが引かれている。\n\n〈先方了承済。元版で進行〉\n\n父の字だった。\n小学校の連絡帳も、その丸い字だった。\n\n僕は電話をかけようとして、やめた。\nいま声を聞いたら、たぶん、事情を聞きたくなる。\n従業員の給料のこと。借金のこと。僕の学費のこと。\nその順番で聞いたら、律のことが最後になる。\n\n「持ち出したの、ばれてるんだよね」\n「うん。倉庫のカメラに映ってる」\n「だから逃げてきた？」\n\n紗季は首を横に振りかけて、やめた。\n\n「最初は。でも、ここまで来たら、湊がまだ普通に私を入れてくれて」\n\n傷のない方の手で、鞄の持ち手を強く握った。\n\n「それが嬉しくて、余計に言えなくなった」\n\n僕は赤いバツの上に手を置いた。\n父の弁解を聞かずに進む。それも僕の選択だった。","kind":"scene","next":"N05"},{"id":"N05","title":"21:09　十八秒の彼女","text":"澪がレコーダーを再生した。\nざらつく音の奥で、去年の僕が息を切らしていた。\n\n『律さん、まだ中に――』\n\nそこで音が跳んだ。\n\n『もう無理だ。置いて行こう』\n\n最後は、間違いなく僕の声だった。\n聞いたことのない順番で、僕の言葉が並んでいた。\n\n「これが、荒瀬に渡った音声」\n\n澪が停止ボタンを押した。\n\n「紗季が編集した。私に渡すために」\n\n紗季は否定しなかった。\n\n「湊が中へ戻ろうとして、私が止めたところを切った。私の声を消そうとして、前後を繋いだ」\n「どうして」\n「澪に、私が湊を助けたせいで律さんが、って思われたくなかった」\n\n澪は口を開けたまま、しばらく何も言わなかった。\n\n「私のためって、ずっと言ってたよね」\n「うん」\n「私が聞いたら傷つくから、って」\n「……うん」\n\n澪が椅子を蹴った。\n倒れた椅子を、自分で起こした。\n\n「ごめん。椅子には」\n\n僕は何を言えばいいのかわからなかった。\n紗季が僕を守った話ではなかった。澪を守った話でもなかった。\n二人の間で自分が嫌われないために、紗季は僕の声を切った。\n\n「そのファイルを私が荒瀬に送った」\n\n澪が言った。\n\n「工事の責任を認めろって。あいつが持ってる音声は、私が渡した」\n\n僕の声は、二人の手を一回ずつ通って、脅迫状になっていた。\n\n「原本は？」\n\n紗季がレコーダーの電池蓋を外した。\n小さなメモリーカードが、テープで裏に貼られていた。","kind":"scene","choices":[{"text":"原本を複製して、音声を最初から聞く","target":"N06R"},{"text":"先に紗季と二人で話す。原本は封筒に戻す","target":"N06S"}]},{"id":"N06R","title":"21:16　置いて行ったもの","text":"机のノートパソコンにカードを挿した。\n音声をコピーし、紗季と澪にも渡した。澪は接続を切ってから、三人のフォルダを指で数えた。\n\n「一個なくしても、なくならないね」\n\n原本は十八秒ではなく、二十七分あった。\n最後の方で火災報知器が鳴った。\n\n『律さん、まだ中にいる』\n『消防の人が行った！　湊、あんたは戻らないで！』\n\n紗季の声が裏返っていた。\n僕は咳をしていた。ひどい音だった。\n\n『冊子、机に全部――』\n『もう無理だ。置いて行こう』\n\n置いて行ったのは、本だった。\n二人で半年かけて作って、ほとんど売れず、最後に火に残した本。\n\n再生が終わっても、紗季は顔を上げなかった。\n\n「このまま出せばよかったんだね」\n\n澪が言った。\n\n「そうだよ」\n\n短すぎる返事だった。\n紗季が何か言いかけたけれど、澪は続きをくれなかった。\n\n僕は音声を少し巻き戻した。\n避難が始まる前に、荒瀬の声が入っていた。\n\n『東は開けるな。資材が崩れる。客は正面だけで回せ』\n\n誰も知らなかった事故ではなかった。\n知っていた人が、何人もいた。","kind":"scene","next":"N07","effects":{"backup":true}},{"id":"N06S","title":"21:16　触っていい人","text":"「五分だけ、紗季と話したい」\n\n澪は僕らを見比べて、玄関へ行った。\n\n「下でタクシー呼ぶ。二人で話を合わせるなら、もっとかかる？」\n「そういうんじゃない」\n「そうだったら、そう言わないでしょ」\n\nドアが閉まった。\n紗季が笑いかけて、途中でやめた。\n\n「今、二人にしてくれたの、嬉しいって思っちゃった」\n\n僕は彼女の右手を見た。\n血は止まっていた。\n\n「別れようって、本気？」\n「湊が全部知る前に、私から言いたかった」\n「僕が振るのは嫌だった？」\n\n紗季は泣かなかった。\n\n「うん。それもある」\n\nその返事に、少しだけ彼女を取り戻した気がした。\nきれいに説明する紗季ではなく、図々しくて、怖がりで、僕が好きだった人。\n\n「手、握っていい？」\n\n紗季が聞いた。\n僕は左手を出した。\n指が入ってきた。いつもと同じ場所に、爪が当たった。\n\n抱きしめたら、この話を止められる。\n一瞬、本気でそう思った。\n\n玄関の外で、澪がノックした。\n僕は手を離し、カードの入った封筒を持った。\nコピーはあとで取るつもりだった。","kind":"scene","next":"N07","effects":{"saki_hold":true}},{"id":"N07","title":"21:28　脅迫者の名前","text":"タクシーの後部座席で、僕はスマホを澪に向けた。\n\n「最初の写真も荒瀬から？」\n\n澪は画面を見た。\n目を閉じ、頭をヘッドレストにぶつけた。\n\n「それ、私」\n\n運転手がミラーを見た。\n僕は声を落とせなかった。\n\n「おまえだけが恋人のつもりだ、って？」\n「うん」\n「なんでそんなことするんだよ」\n\n「普通に言っても、湊は紗季に聞く。紗季が大丈夫って言ったら、それで終わる。私の話、最後まで聞かない」\n\n澪は写真の送り元をタップした。\n別の番号だった。荒瀬のメッセージと、通知の並びで一つに見えていた。\n\n「前に使ってた番号。契約、まだ切ってない」\n「写真は」\n「律を迎えに来た従兄が撮った。私が切った。誤解するように」\n\n紗季が窓を向いた。\n\n「私の編集、あんなに怒ったのに」\n「うん。やったあとで、同じことしたって思った」\n\n澪の手が膝の上で震えた。\n\n「姉のことを使えば、好きな人の恋人を傷つけてもいいって、どこかで思った」\n\n僕は聞き間違いを探した。\n好きな人。\n\n「いま告白すんなよ」\n\n出てきたのは、それだけだった。\n\n「してない。最低なことした理由を言ってる」\n\n澪は僕を見なかった。\n紗季が窓に映った僕の顔を見ていた。\n\nタクシーが信号で止まった。\n三人とも、降りた方がいいような気がした。\n誰も降りなかった。","kind":"scene","choices":[{"text":"「写真のことは許せない。でも今夜は一緒にやる」と澪に伝える","target":"N08M"},{"text":"澪と距離を置き、律本人に連絡してもらう","target":"N08R"}]},{"id":"N08M","title":"21:36　好きなら、なおさら","text":"「写真のことは許せない」\n\n澪は小さく頷いた。\n\n「でも、今夜は一緒にやる。律さんのことも、僕のことも、勝手に決めないでくれ」\n「わかった」\n「好きだったら、なおさら」\n\n言ってから、紗季の前だと思い出した。\n紗季は窓の曇りを手の甲で拭いていた。\n\n澪が僕のスマホを返すとき、指輪を一緒に載せた。\n\n「律、ずっと返したかったって。あの日、あんたが手を引いてくれたところまでは覚えてる」\n\n僕は煙の中を思い出した。\n指から何かが抜けた感触だけを覚えていた。\n\n「病院に行ったとき、なんで帰した」\n\n澪の口元が歪んだ。\n\n「律があんたをかばうの、聞きたくなかった。怒ってる人が誰もいなくなったら、あの日が終わっちゃう気がして」\n\n指輪をはめようとした。節で止まった。\n去年より少し、指が太くなっていた。\n\n澪はそれを見て泣きそうになった。\n理由を、僕は聞かなかった。","kind":"scene","next":"N09","effects":{"mio_trust":true}},{"id":"N08R","title":"21:36　本人の席","text":"僕は澪から一人分、体を離した。\n\n「律さんに話したい」\n「今、疲れてる時間だから」\n「話せるかどうかを、本人に聞いて」\n\n澪は返事をしなかった。\n長く画面を見てから、電話をかけた。\n\n『何。三人とも死にそうな顔して』\n\n律はビデオ通話に出た。\n病院ではなく、自宅のソファだった。膝には猫がいた。\n\n『私の件なら、今、猫より優先する』\n\n澪が笑い、すぐに顔を歪めた。\n僕は案内図のことから話した。音声のこと。今夜の呼び出し。\n\n律は猫を床へ下ろした。\n\n『湊。あんたに引っ張られたとき、私、腕が抜けるかと思った』\n「すみません」\n『あれは助けようとしてたんでしょ。案内図は腹立つ。助けに来たことまで消さないで』\n\n初めて聞く、律自身の怒りだった。\n僕らが想像していたものより、ずっと細かく分かれていた。\n\n『診療の記録とか、住所は出さないで。私の話は私が書く。今から送る。澪、一文字でも勝手に切ったら、今度こそ怒るよ』\n\n澪は小さく、はい、と言った。","kind":"scene","next":"N09","effects":{"witness":true}},{"id":"N09","title":"21:51　祝福の裏口","text":"ホテルのロビーには、卒業生の名前が金色の文字で並んでいた。\n僕の名前もあった。\n紗季が、その前を少し早く歩いた。\n\n荒瀬は控室Ｂでサンドイッチを食べていた。\n僕らが入ると、指先のパン屑を皿に落とした。\n\n「若い子は、メッセージだと話を大きく取るから」\n\n机には、三人分の書類が揃っていた。\n僕には火災の声明。\n紗季には、音声を単独で偽造したという確認書。\n澪には、荒瀬への謝罪と撤回。\n\nどれか一人が署名すれば、他の二人の書類は破棄する。\nそう説明された。\n\n「責任を取る人がいないと、助ける方も動けない」\n\n荒瀬は僕の前に、父の印刷所への発注書を置いた。\n半年分だった。\n\n「君が社会に出てから考えればいい。親御さんが何人の生活を抱えてるか」\n\n紗季が搬入票を出した。\n\n「先に、これの説明をしてください」\n\n荒瀬の顔から、親しげなものが消えた。\n紙を受け取るふりをして、封筒ごと引いた。\n澪が手首をつかんだ。水のグラスが倒れた。\n\n封筒の中身が机に散った。\nメモリーカードが滑り、荒瀬の靴の下へ落ちた。\n\nぱき、と音がした。\n\n事故みたいな顔で、荒瀬が足をどけた。\n\n「落とすからだ」\n\n{{CARD}}","kind":"scene","next":"N10","text_variants":[{"marker":"CARD","flag":"backup","true":"紗季が息を呑んだ。\n僕は机の下で、彼女の左手の甲を二度叩いた。\nコピーがある。\n彼女はその意味がわかるまで、僕を見ていた。","false":"僕は割れたカードを拾った。\nコピーを取っていない。あとでやるつもりだった。\n端子の横を、白い亀裂が走っていた。\n紗季が、僕の顔を見て何かを悟った。\n「私と話したから」と言いかけたので、僕は首を振った。\nその五分を選んだのは、僕だ。"}]},{"id":"N10","title":"22:03　誰を売る","text":"荒瀬がボールペンを置いた。\n\n「お互いに失敗はある。私も言い方が悪かった」\n\n澪がポケットのスマホを出した。\n録音中の赤い表示があった。\n\n「今のも失敗ですか」\n\n荒瀬の目が動いた。\n初めて、僕たち三人を数え直したように見えた。\n\n「それを公開して、誰が君たちを雇うんだ」\n\n紗季が僕の前の書類を取った。\n\n「私が音声を切ったのは本当です。私が署名すれば、湊の声明は出さないんですね」\n\n「紗季」\n\n呼ぶと、彼女は僕を見た。\nさっきの部屋で、左手を差し出したのと同じ顔だった。\n\n「私がやったことだから」\n\n確認書には、音声の編集だけでなく、搬入票の偽造まで書いてあった。\n本当の罪を入口にして、嘘の罪が続いていた。\n\n荒瀬が別の紙も出した。\n三人全員が今夜の件を口外しないなら、声明も確認書も使わないという合意書。\n\n「君たちは、明日ちゃんと卒業すればいい」\n\n隣の宴会場から拍手が聞こえた。\n誰かの前途が、祝福されていた。","kind":"scene","choices":[{"text":"三人で黙る取引を選ぶ","target":"E01"},{"text":"紗季が署名するのを止めない","target":"E02"},{"text":"「誰も署名しない」。書類を撮り、部屋を出る","target":"N11"}]},{"id":"E01","title":"結末　明日も恋人","text":"僕が最初に名前を書いた。\n紗季は僕の署名を見てから、自分の名前を書いた。\n澪はペンを握ったまま、何度も窓の方を見た。\n\n「律には、私が言う」\n\nそう言って、最後に書いた。\n荒瀬は書類を回収した。脅迫に使った文書を目の前で破った。\nコピーが残っていないか、僕らは聞かなかった。\n\n＊\n\n卒業式の日は晴れた。\n父の印刷所から届いた式次第は、よく乾いていて、指にインクがつかなかった。\n\n紗季が僕のネクタイを直した。\n手にはまだ絆創膏があった。\n\n「似合ってる」\n「そっちも」\n\n澪は写真に入らなかった。\n姉の迎えがある、と言った。嘘かどうかを確かめる資格を、昨夜、手放した気がした。\n\n四月からも、紗季と電話をした。\n今日は何を食べた。仕事はどう。次はいつ会える。\n別れ話は、なかったことになった。\n\n五月、父が新しい印刷機を入れた。\n資金の一部は、荒瀬の会社からの前払いだった。\n手伝いに行くと、僕の机が用意されていた。\n\nその帰り、紗季が部屋に来た。\n僕たちは抱き合った。彼女の髪が頬に触れた。好きだと思った。本当に思った。\n\n「ねえ」\n\n紗季が僕の胸に顔をつけたまま言った。\n\n「私たち、別れても大丈夫かな」\n\n恋人でいるうちは、お互いが何を黙っているかわかる。\nそれがなくなったら。\n\n僕は答える代わりに、腕に力を入れた。\n紗季も、同じ強さで抱き返した。\n\n―― END「明日も恋人」","kind":"ending"},{"id":"E02","title":"結末　きみが選んだこと","text":"紗季のペンが紙に触れた。\n僕は止めなかった。\n\n一文字目。二文字目。\n僕が黙っていた時間が、彼女の名前になった。\n\n「湊」\n\n澪が呼んだ。\n振り向けば、何かをしなければならなかった。\n僕は紗季の手を見ていた。\n\n荒瀬は僕の声明を破った。\n紗季の確認書を、クリアファイルに入れた。\n\n「これで君の問題は終わりだ」\n\nその「君」に、紗季は入っていなかった。\n\n＊\n\n紗季は卒業式に来なかった。\n翌週、就職先と話し合うため、予定より早く県外へ行った。\nネットに出た短い記事では、〈学生が資料を改変〉と書かれていた。\n避難口の前に資材が積まれていた件は、一行しかなかった。\n\n僕は三度、電話をした。\n三度目に紗季が出た。\n\n『私が選んだことだから、って言おうとした？』\n\n本当に、その文を考えていた。\n\n『言わなくていい。今それ聞いたら、好きだったことまで嫌になる』\n\n受話器の向こうで、駅の案内が流れた。\n\n「訂正する。全部、話す」\n『私に言う前に、やって』\n\n電話は切れた。\n僕は文章を書き始めた。ホテルで、署名の手が止まらなかった理由を。\n自分の名前が消えるのを見て、ほっとしたことまで。\n\n送信先に、まず澪の名前を入れた。\nそれで何かが戻るとは、もう書けなかった。\n\n―― END「きみが選んだこと」","kind":"ending"},{"id":"N11","title":"22:12　扉を開ける人","text":"僕は署名欄を手で覆った。\n\n「誰も書かない」\n\n書類を撮った。荒瀬はスマホに手を伸ばしたが、澪が扉を開けた。\n廊下にいたホテルのスタッフが、こちらを見た。\n\n「私たち、帰ります。出口まで来てもらえますか」\n\n澪の声は驚くほど普通だった。\n荒瀬は、もう手を伸ばさなかった。\n\nロビーで紗季が足を止めた。\n椅子に座ろうとして、座る前に膝が折れた。\n僕と澪が両側から支えた。\n\n「ごめん。ずっと立ってたら、大丈夫な気がしてた」\n\n売店で水と小さなチョコを買った。\n澪は包みを開けられず、紗季に渡した。\n紗季は怪我をした手を見せた。\n二人が僕を見た。\n\n僕が開けたチョコを、三人で食べた。\n口の中に甘いものが入ると、吐きそうだったのが少し治まった。\n\n「一個じゃ少なかったな」\n「この状況で割り勘する？」と澪が言った。\n「領収書あるよ」\n\n紗季が変な声で笑った。\n澪も笑って、すぐに目元を拭いた。\n\n僕のスマホが鳴った。\n\n《23時に声明を出す。残り48分》\n\n笑いが止まったあとも、甘さは残っていた。","kind":"scene","next":"N12"},{"id":"N12","title":"22:19　取り返せない五分","text":"ホテルの向かいのファミリーレストランに入った。\n澪が充電器を広げ、紗季がテーブルに搬入票を置いた。\n原本はホテルで回収した。水で端が波打っていたが、会社名と日付は読めた。\n\n{{EVIDENCE}}\n\n{{FATHER}}\n\n今夜の録音と、脅迫のメッセージと、署名を切り貼りした文書。\nそれらは残っている。\nでも、去年の出来事のどこまでを説明できるかは、同じではなかった。\n\n「荒瀬を黙らせる文章と、自分のしたことを書く文章って、違うね」\n\n紗季が言った。\n僕のノートパソコンには、〈僕は犯人ではありません〉とだけ入力されていた。\n\n澪はその一行を読んだ。\n\n「その先は？」\n\n僕は削除キーを押した。\n〈僕は避難案内を作りました。階段を確認しませんでした〉。\n書き直すと、二行目に進めた。","kind":"scene","next":"N13","text_variants":[{"marker":"EVIDENCE","flag":"backup","true":"原本のコピーを、三台でもう一度開いた。\n火事の中の会話。荒瀬が東階段を使わせなかった指示。\n紗季が切った位置を、再生時間とともに書き出した。\n同じ声でも、前後があれば別の意味になる。今回は前後ごと残せる。","false":"割れたカードを挿しても、パソコンは反応しなかった。\n紗季が、去年の会話を覚えている範囲で書いた。\n「置いて行こうって言ったのは、本のこと。私が冊子を取りに戻ろうとしたから」\n僕もそこを思い出した。でも、二人の記憶を原本の音声だとは言えない。\nカードは修復できるかもしれない。今夜は確かめられない。\n証拠の欄に入れかけた文章を、証言の欄へ移した。"},{"marker":"FATHER","flag":"father_record","true":"父から受け取ったメールも添えた。\n原版を戻したことを、父自身が説明している。僕だけを外して済む記録ではなかった。","false":"搬入票と父の赤字は撮影できたが、父自身の説明はなかった。\n〈荒瀬の指示で戻した〉と断言しかけて、消した。そこは、父に答えてもらうしかない。"}]},{"id":"N13","title":"22:31　律の写真","text":"澪は、荒瀬を告発するためのフォルダを作っていた。\n診療の書類、病室の律、火傷の経過、家族のやり取り。\nスクロールしても終わらなかった。\n\n「全部見せれば、嘘じゃないってわかる」\n\n画面には、律が食事をこぼして泣いている動画があった。\n澪が指を止めた。\n\n「これは……違うか」\n\n動画の中の律は、カメラに気づいていない。\n言い返せない姉の姿ほど、人は自分たちに同情するだろう。\nそのことを、三人ともわかっていた。\n\n{{WITNESS}}\n\n紗季が机にスマホを置いた。\n県外の就職先から、明日の打ち合わせの確認が来ていた。\n\n「私、全部話す。編集した理由も、湊に黙ってたことも」\n\n澪が頷いた。\n\n「写真を送ったのは私だって、私から言う」\n\n二人が僕を見た。\n一年前と同じように、何かを印刷する前の机だった。\n今度は、僕が確認する番だった。","kind":"scene","choices":[{"text":"元のフォルダをそのまま公開する。今すぐ注目を集める","target":"E03"},{"text":"律の私的記録を外し、確認できる資料と自分たちの説明を届ける","target":"N14"}],"text_variants":[{"marker":"WITNESS","flag":"witness","true":"律から文章が届いた。\n〈私の怪我が、誰かの都合のいい写真になるのは嫌です。階段で何が起きたかを、調べてください〉\n公開してよい文章と、公開しないでほしい記録が、別々に指定されていた。\n澪はフォルダを二つに分けた。元のフォルダも、まだ画面に残っている。","false":"「律さん、これ、公開していいって？」\n僕が聞くと、澪は首を横に振った。\n「資料を集めてるのは知ってる。でも、これ全部は見せてない」\n本人の説明を聞いていないまま、僕らの締切だけが迫っていた。"}]},{"id":"E03","title":"結末　正しい炎上","text":"僕は元のフォルダを公開した。\n画像の数が多いので、処理に時間がかかった。\n途中で澪が「あ」と言った。止めるボタンを探している間に、完了した。\n\n律の住所。患者番号。泣いている動画。\n資料の中にあったものが、そのまま、誰でも保存できるものになった。\n\n通知が増えた。\n名前の知らない人が、荒瀬を罵り、僕たちを励ました。\n怒ってくれる人がいる。それが気持ちよかった。\n気持ちいいと気づいたときには、もう何度も画面を更新していた。\n\n荒瀬の声明も出た。\nネットには二つの説明が並び、人は好きな方を短く切り取った。\n\n{{RAW}}\n\n二十三時十一分。律から電話が来た。\n澪は立ち上がって、店の外へ行った。\nガラス越しに、何度も頭を下げるのが見えた。\n\n戻ってきた澪は、僕を見なかった。\n\n「猫の名前まで、知らない人から来たって」\n\n公開を止めた。\n止める前に、誰かが保存していた。\n\n＊\n\n六月、大学が避難経路の管理について説明する会を開いた。\n律は来なかった。\n大勢の人が彼女のために怒った。彼女の席だけ、空いていた。\n\n僕たちは一列に座ったが、帰りは三方向に別れた。\n紗季に好きだと言うには、先にしなければならない話が多すぎた。\n澪からは、資料を削除してもらう連絡先だけが届いた。\n\n律が後日送ってきた短い文を、僕は消せずにいる。\n\n《荒瀬には、階段を塞がれた。あなたたちには、部屋のカーテンを開けられた》\n\nあの夜いちばん広まった投稿には、今も僕の名前がある。\n〈勇気ある告発〉と書かれている。\n\n―― END「正しい炎上」","kind":"ending","text_variants":[{"marker":"RAW","flag":"backup","true":"原本の音声があったため、切られた会話はすぐ比較された。\n僕が律を置いて行けと言った、という話は崩れた。\nその訂正と一緒に、律の病室の動画も広まった。","false":"原本の音声がないことを指摘され、僕らの記憶は言い逃れだと呼ばれた。\nそのたびに、より痛々しい律の写真が、反論の代わりに共有された。\n彼女の怪我が、僕の無実を主張する道具になった。"}]},{"id":"N14","title":"22:46　送る前の名前","text":"律の私的な記録を、公開用のフォルダから外した。\n搬入票、案内図、今夜の脅迫、三人それぞれの説明。\n連絡先や他人の住所が入るものは、提出用と公開用を分けた。\n\n澪が、前に律の件を取材した地元紙の記者へ電話した。\n紗季は大学の窓口に送る文面を書いた。\n僕は今夜の脅迫とホテルでされたことを、警察に相談するために時刻順に並べた。\n\n誰か一人へ渡したら終わり、とは思えなかった。\n送った資料と、送った時刻を、三人の端末に残した。\n\n{{VOICE}}\n\n公開する文章には、僕の名前を最初に書いた。\n次に、自分がしたこと。\n誰かにされたことは、そのあとに置いた。\n\n「送るよ」\n\n僕が言うと、紗季が画面を指差した。\n\n「ここ。私が編集したこと、受け身にしないで。音声が編集された、じゃなくて」\n\n〈紗季が編集しました〉。\n本人が打ち直した。\n\n澪も、写真について自分の名前を入れた。\n\n送信ボタンを押した。\n拍手も音楽もなかった。\n店員が来て、空いた皿を下げていいか聞いた。\n\n僕たちは三人とも、はい、と答えた。","kind":"scene","next":"N15","text_variants":[{"marker":"VOICE","flag":"witness","true":"律の文章は、指定された範囲だけをそのまま添えた。\n澪は一度、姉らしくない硬い言い回しを直そうとして、手を止めた。\n「これでいいんだよね」\n僕ではなく、律へ確認を送った。返事は、〈それでいい〉だった。","false":"律本人の説明は、まだない。\n〈被害者も公開を望んでいます〉という一文を削除した。\n本人がどう考えているかは、本人が答えるまで空欄にした。\n澪は律へ、今夜したことと、外した資料の一覧を送った。"}]},{"id":"N15","title":"23:04　勝ったあとの夜","text":"荒瀬の声明は、予告どおり出た。\n僕らが先に動いても、送信を止めることはできなかった。\n\n知らない人から連絡が来た。\n本当なのか。大丈夫なのか。明日の式には来るのか。\n僕たちは返せるものにだけ返した。\n\n{{PROOF}}\n\n記者から、翌朝、資料を見ながら話を聞きたいと返事が来た。\n大学からは受領の連絡だけが来た。\n今夜の脅迫について相談すると、メッセージや録音を消さずに、詳しい説明をする段取りになった。\n荒瀬がその場で連れていかれるような展開は、起きなかった。\n\n父から電話が来た。\n\n{{DAD}}\n\n電話を切った僕に、紗季が何か言いかけた。\n慰めなら今は受け取れないと思った。\n\n「お金、足りる？　今日のタクシー、私、払ってない」\n\n僕は財布を見た。\n二千円しかなかった。\n\n「帰り、電車だな」\n\n澪が時刻表を開いた。\n三人で画面を覗いた。\n終電までは、まだ時間があった。","kind":"scene","next":"N16","text_variants":[{"marker":"PROOF","flag":"backup","true":"原本の音声を聞いた記者から、編集前後を確認したという連絡が来た。\nそれだけで全部の疑いが消えるわけではない。でも、僕が言っていない意味の言葉を、僕の告白として出し続けることは難しくなった。","false":"去年の音声については、原本を示せなかった。\n割れたカードは保管し、復旧を相談することにした。今夜の録音と搬入票があるため、荒瀬の説明だけで話が終わるわけでもなかった。\nただ、僕の十八秒は、訂正されないまま広がった。"},{"marker":"DAD","flag":"father_record","true":"『取引が止まるかもしれん』\n父はそう言い、しばらく黙った。\n『明日、俺も説明する。メールの元データも持っていく』\n僕は、ありがとうとは言えなかった。\n「待ってる」とだけ言った。","false":"『先に俺に聞けなかったのか』\n僕は父の赤字の話をした。\n父は怒り、否定しかけて、最後に、話が長くなると言った。\n「長くても聞く。でも、元版を戻したことは、みんなに説明して」\n父は返事をしなかった。通話時間だけが伸びていった。"}]},{"id":"N16","title":"23:38　今夜の返事","text":"駅前の歩道橋で、紗季が立ち止まった。\n澪は三段先で、こちらを向いた。\n\n「最初に言ったこと、取り消さない」\n\n紗季が言った。\n\n「別れよう。今までの続きに戻ったら、また、言えないことを溜める」\n\n僕は彼女の顔を見た。\n昼間ならきれいに隠せたはずの疲れが、街灯の下では全部見えた。\n\n「でも、まだ好き。そこまで嘘にしたくない」\n\n澪が階段を下りて、同じ高さまで来た。\n\n「私も、なかったことにはしない。写真のことも、好きだって言ったことも」\n\n紗季が澪を見た。\n\n「今だったら、勝てると思ってる？」\n「思ってる自分が嫌で、黙れなかった」\n「本当に、腹立つ」\n「うん」\n\n二人とも、僕が次に言うことを待っていた。\n抱きしめれば済む人はいない。\n誰も選ばないことも、誰も傷つけないこととは違う。\n\n電車が橋の下を通った。\n音で会話が途切れる、その数秒がありがたかった。\n音がなくなった。","kind":"scene","choices":[{"text":"紗季に「別れたあと、もう一度会いたい」と伝える","target":"S01"},{"text":"澪に「今夜の続きではなく、二人で会いたい」と伝える","target":"M01"},{"text":"二人に「今は、誰とも付き合わない」と伝える","target":"U01"}]},{"id":"S01","title":"翌朝　ほどいたあとで","text":"「別れよう」\n\n僕が言うと、紗季は唇を噛んだ。\n自分で言い出したくせに、傷ついた顔をした。\n\n「そのあとで、もう一度会いたい。今夜みたいに、全部聞かせて」\n\n紗季の視線が僕の手に落ちた。\n\n{{TOUCH}}\n\n澪が手すりから離れた。\n\n「わかった。私、反対側だから」\n\n笑おうとしたので、やめてくれと思った。\n澪は笑わずに、「じゃあね」と言った。\n\n＊\n\n僕らは駅で別れ、翌朝、大学の門で会った。\n紗季は卒業式の服で、僕は昨日と違うシャツを着ていた。\n\n一緒に歩いていると、知り合いが、まだ付き合ってたんだ、と言った。\n紗季は「昨日、別れた」と答えた。\n\n僕は隣で、うん、と言った。\n変な顔をされた。僕らもちょっと変だった。\n\n式のあと、資料を持って記者に会った。\n紗季は、自分が編集した音声について、僕の顔を見ずに説明した。\n僕も案内図について話した。\n相手を助けるために説明を丸めなかったのは、初めてだった。","kind":"scene","next":"E04","text_variants":[{"marker":"TOUCH","flag":"saki_hold","true":"「さっき握ってくれたから、戻れるって思ってた」\n紗季は自分の左手を見た。\n「でも、それで許されたことにするの、もうやめる」\n手は繋がなかった。","false":"紗季は手を伸ばしかけて、コートのポケットに戻した。\n「今度、手を握りたくなったら、聞く」\n「うん」\n「断っても、帰らないでね」\nその約束だけは、僕はすぐに頷けた。"}]},{"id":"E04","title":"結末　初めての二回目","text":"六月。紗季がこの街へ戻ってきた。\n駅の改札で、僕は二十分待った。\n電車が遅れたのではなく、紗季が一本乗り損ねた。\n\n「寝坊した」\n「仕事が長引いた、とかじゃなくて？」\n「寝坊。昨日、楽しみで寝られなかった」\n\n僕は文句を言おうとして、失敗した。\n紗季がそれを見て笑った。\n\n{{AFTER}}\n\n澪とは、調査の進み具合を共有するときに連絡を取る。\n三人の食事に誘うのは、まだできない。\n紗季と歩くために、何も失わなかったわけではなかった。\n\n古本屋で、二人で作った冊子と同じ紙の本を見つけた。\n紗季が指で背を撫でた。\n\n「また作る？」\n「火の出ない場所で」\n\n言った瞬間、まずいと思った。\n紗季は笑わなかった。\n\n「それ、まだ笑えない」\n「ごめん」\n\n僕は本を棚に戻した。\n気まずくなった。けれど紗季は店を出て行かなかった。\n隣の棚で、料理の本を一冊手に取った。\n\n店を出たところで、紗季が言った。\n\n「今日、恋人として来たつもりだった」\n\n僕は足を止めた。\n\n「先に聞いてくれよ」\n「今、聞いてる」\n\n好きだと思った。\n昨日までと同じ人の、知らなかった顔ではない。\n知ってしまった顔を、もう一度見たいと思った。\n\n「僕も」\n\n紗季が左手を出した。\n今度は、僕から握った。\n\n―― END「初めての二回目」","kind":"ending","text_variants":[{"marker":"AFTER","flag":"backup","true":"工事中の避難経路と、案内図がそのまま使われた経緯について、調査が続いている。\n僕の音声は、編集前後を併記した訂正が出た。父の仕事は減った。僕は別の印刷所で働きながら、聞き取りに通っている。","false":"去年のカードは、まだ音声を取り出せていない。\n搬入票と今夜の録音から調査は続いているが、僕の発言についての誤解は残った。\n紗季は、自分が切ったことと、切る前に何があったかを、尋ねられるたびに自分の言葉で説明している。"}]},{"id":"M01","title":"翌朝　奪ったあとに残るもの","text":"「澪と、二人で会いたい」\n\n言った途端、紗季の顔が変わった。\nさっきまで言い返していた人が、言葉を探せなくなった。\n\n「わかった」\n\nわかっていない声だった。\n僕はそれを訂正できなかった。\n\n澪は喜ばなかった。\n\n{{MIO}}\n\n紗季が僕の鞄から、自分の部屋の鍵を取った。\n僕の手のひらに、僕の部屋の鍵を返した。\n\n「明日の取材には行く。これは別の話だから」\n\n鍵は、返される直前まで彼女の手の中にあったので、温かかった。\n\n＊\n\n卒業式のあと、澪と大学の裏門で会った。\n花束を持っていた。僕にではなく、律に渡すものだった。\n\n「今日、二人で会うって話だったけど、先に姉のところに行きたい」\n「うん」\n「湊も連れていっていいか、聞いた。本人に」\n\n僕は頷いた。\n澪は花束を僕に持たせ、靴擦れした踵に絆創膏を貼った。\n僕が知っている澪と、昨日まで知らなかった澪が、同じ人の中にいた。","kind":"scene","next":"E05","text_variants":[{"marker":"MIO","flag":"mio_trust","true":"「写真がなかったら、今、同じこと言った？」\n「わからない」\n澪は顔を伏せた。\n「そこ、嘘でも言ってほしかった。今も、そういうこと思う」\n「だから、今夜の勢いで付き合うのは嫌だ。昼に会いたい」\n澪は時間をかけて頷いた。","false":"「私のこと、まだ信用してないでしょ」\n「してないところがある。でも、聞きたいこともある」\n「じゃあ、一回会うだけ。付き合うって返事は、まだしないで」\n澪が条件を決めた。僕はそれを受け入れた。"}]},{"id":"E05","title":"結末　選ばれても、消えない","text":"律の家で、猫に花束をかじられた。\n澪は花を高い棚へ移し、僕に座布団を渡した。\n\n{{RITSU}}\n\n僕は案内図を見せた。\n何を確認せず、何を言わなかったかを説明した。\n律は全部聞いてから、「今日はそこまで」と言った。\n\n帰り、澪は僕と駅まで歩いた。\n花を持っていた腕が空いて、どう置けばいいかわからないようだった。\n僕は手を取らなかった。\n\n＊\n\nそれから、何度も昼に会った。\n六月、澪が大学院の設計課題を落としかけたときは、恋愛の話をする余裕が二人ともなかった。\n僕は模型に触らせてもらえず、ひたすら台紙を切った。\n\n「寸法、違う」\n「一ミリだろ」\n「一ミリを笑う印刷屋、嫌だな」\n\n僕が切り直すと、澪は自分の分も一枚、失敗していた。\n隠そうとしたので、指差した。\n澪は笑った。\n僕はその顔を見て、今なら言えると思った。\n\n「付き合ってほしい」\n\n澪はカッターを置いた。\n\n「紗季と別れた日のこと、私は嬉しかったよ」\n「うん」\n「それも知ってて、言って」\n\n僕はもう一度言った。\n澪は頷いて、泣いた。\n\nあの写真の件は消えない。紗季は僕たちに、おめでとうとは言わなかった。\n調査の連絡が来る日は、今でも手が冷える。\n\nそれでも澪といると、明日見せたいものが増えていく。\n模型の窓に、小さなカーテンをつけた。\n澪は下手だと言って、一つだけそのまま残した。\n\n―― END「選ばれても、消えない」","kind":"ending","text_variants":[{"marker":"RITSU","flag":"witness","true":"「昨夜、勝手に私の話を出さなかったの、そこは助かった」\n律は猫を抱き上げた。\n「それと、湊に怒ってるのは別ね。座って。案内図、持ってきた？」","false":"律は澪を見た。\n「送ってくれた一覧、読んだ。私が何を出したいか、次は先に聞いて」\n澪は頷いた。\n律は僕にも同じことを言った。妹だけの落ち度にさせなかった。"}]},{"id":"U01","title":"翌朝　三人で帰らない","text":"「今は、誰とも付き合わない」\n\n口にすると、ほっとした。\nその顔を、紗季に見られた。\n\n「二人とも選ばなかったら、優しい人になれるわけじゃないからね」\n「わかってる」\n「わかってない顔だった」\n\n澪が俯いた。\n僕は言い訳をやめた。\n\n「紗季と別れるのが怖い。澪に好きだって言われて、嬉しかった。それを、今、答えにしたくない」\n\n二人は頷いてくれなかった。\n紗季は鍵を返した。澪は指輪を返したことを、もう一度確認した。\nそれぞれの電車へ歩いた。\n\n一人になると、急に寒かった。\n僕はコートの前を閉めた。\n\n＊\n\n翌朝、卒業証書を受け取った。\n会場で紗季を見つけたが、手を振る前に彼女が目をそらした。\n澪は友達と写真を撮っていた。\n\n僕は資料の入った鞄を持ち直した。\n取材の約束には、三人とも時間どおりに来た。\n隣に座っても、昨日の続きにはならなかった。","kind":"scene","next":"E06"},{"id":"E06","title":"結末　名前のある余白","text":"六月、印刷所で名刺を刷った。\n僕の名刺だった。\n父とは別の会社に就職した。昼休みに、火災の件の聞き取り日程を返した。\n仕事と過去は、交代でやって来るわけではなかった。\n\n父とは日曜に会う。\n荒瀬の仕事が減ったあと、どう店を続けるかを話す。\n案内図のことを話す日もある。食事だけで終わる日もある。\n親子をやめなかったから、説明を求めなくてよくなるわけではない。\n\n律には、自分が書いた説明を送った。\n返事は一週間後だった。\n〈確認しました。三段落目、私が階段へ向かった時刻が違います〉。\n直して、もう一度送った。\n許すとも、許さないとも書かれていなかった。\n\n紗季から、送る相手を間違えた写真が来た。\n職場の近くのパン屋だった。\nすぐ、〈ごめん、間違えた〉と来た。\n\n僕は〈うまそう〉と返した。\nそれで終わった。\n\n澪とは大学の展示で会った。\n模型の脇に、彼女の名前が小さく印刷されていた。\n僕は「名前、小さいな」と言った。\n\n「自分のだから、わかる」\n\n少し話したあと、澪は友達のところへ戻った。\n帰りの約束はしなかった。\n\n夜、引き出しから指輪を出した。\nもう指には入らない。\n名刺の箱の隣に置いた。\n\nスマホを開くと、空の入力欄があった。\n寂しい、と打った。\n誰に送るか決めずに書くと、少し違う言葉に見えた。\n\nその晩は送らなかった。\n翌朝、自分の弁当を作った。\n卵を焦がし、焦げた方を下にして詰めた。\n食べるのは、自分だった。\n\n―― END「名前のある余白」","kind":"ending"}],"counting":{"body_characters_without_whitespace":15468,"includes":"全分岐・全履歴差分の合計。一周の文字数ではない。"}}</script><script>'use strict';
+const story = JSON.parse(document.getElementById('scenario-data').textContent);
+const nodes = Object.fromEntries(story.nodes.map(n => [n.id, n]));
+const KEY = 'unselected_words_graduation_thriller_v1';
+const byId = id => document.getElementById(id);
+const defaultFlags = Object.fromEntries(Object.entries(story.flags).map(([k, v]) => [k, v.initial]));
+let path = [], fontSize = 20;
+
+function condition(rule, flags) {
+  if (rule.flag) return Boolean(flags[rule.flag]);
+  if (rule.all) return rule.all.every(flag => Boolean(flags[flag]));
+  if (rule.any) return rule.any.some(flag => Boolean(flags[flag]));
+  if (rule.not) return !flags[rule.not];
+  throw new Error('Unknown story condition');
+}
+function flagsAt(p) {
+  const flags = {...defaultFlags};
+  for (const id of p) Object.assign(flags, nodes[id].effects || {});
+  return flags;
+}
+function textFor(node, flags) {
+  let text = node.text;
+  for (const variant of node.text_variants || []) {
+    text = text.replaceAll('{{' + variant.marker + '}}', variant[condition(variant, flags) ? 'true' : 'false']);
+  }
+  return text;
+}
+function targets(node, flags) {
+  if (node.choices) return node.choices.map(c => c.target);
+  if (node.branch) return [node.branch[condition(node.branch, flags) ? 'true' : 'false']];
+  if (node.next) return [node.next];
+  return [];
+}
+function validPath(p) {
+  if (!Array.isArray(p) || !p.length || p[0] !== story.start_node) return false;
+  for (let i = 0; i < p.length; i++) {
+    if (!nodes[p[i]]) return false;
+    if (i && !targets(nodes[p[i - 1]], flagsAt(p.slice(0, i))).includes(p[i])) return false;
+  }
+  return true;
+}
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+  if (saved && validPath(saved.path)) path = saved.path;
+  if (saved && Number.isFinite(saved.fontSize)) fontSize = Math.max(16, Math.min(28, saved.fontSize));
+} catch (_) {}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify({path, fontSize})); } catch (_) {}
+  byId('continue-button').classList.toggle('hidden', !path.length);
+}
+function scrollToTop() { window.scrollTo({top: 0, behavior: 'instant'}); }
+function mode(which) {
+  for (const id of ['cover', 'reader', 'manuscript']) byId(id).classList.toggle('hidden', id !== which);
+}
+function home() { mode('cover'); save(); scrollToTop(); }
+function full() { mode('manuscript'); scrollToTop(); }
+function titleFor(node) {
+  return node.reader_title || node.title.replace(/・(?:選択差分[A-Z]|履歴差分)/g, '');
+}
+function routeFor(id) { return nodes[id].kind === 'ending' ? '終章' : '卒業前夜、きみを売る';
+}
+function addParagraph(container, text) {
+  const p = document.createElement('p');
+  p.textContent = text;
+  p.style.whiteSpace = 'pre-line';
+  p.className = text === '＊' ? 'scene-break' : text.startsWith('―― END') ? 'ending-line' :
+    /^[「《【]/.test(text) || /^(入力：|表示された提案：|採用した文：|保存時の本人メモ：)/.test(text) ? 'spoken' : 'narration';
+  container.appendChild(p);
+}
+function navButton(text, action, target) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'choice'; b.textContent = text;
+  if (target) b.dataset.target = target;
+  b.addEventListener('click', action);
+  return b;
+}
+function go(target) {
+  if (!targets(nodes[path[path.length - 1]], flagsAt(path)).includes(target)) return;
+  path.push(target); render();
+}
+function restart() {
+  if (path.length > 1 && !window.confirm('読書位置を最初に戻します。選択した履歴も選び直せます。よろしいですか？')) return;
+  path = [story.start_node]; render();
+}
+function render() {
+  if (!path.length) path = [story.start_node];
+  const node = nodes[path[path.length - 1]];
+  const flags = flagsAt(path);
+  mode('reader'); byId('reader').dataset.node = node.id;
+  byId('reader-route').textContent = routeFor(node.id);
+  byId('reader-title').textContent = titleFor(node);
+  const body = byId('reader-text'); body.replaceChildren();
+  for (const text of textFor(node, flags).split('\n\n').filter(t => t.trim())) addParagraph(body, text);
+  const controls = byId('reader-choices'); controls.replaceChildren();
+  if (node.choices) {
+    const label = document.createElement('p'); label.className = 'choice-label'; label.textContent = 'どうする？';
+    controls.appendChild(label);
+    const choices = document.createElement('div'); choices.className = 'choices';
+    for (const c of node.choices) choices.appendChild(navButton(c.text, () => go(c.target), c.target));
+    controls.appendChild(choices);
+  } else if (node.kind === 'ending') {
+    const done = document.createElement('p'); done.className = 'end-note'; done.textContent = 'この経路の物語は、ここで完結です。';
+    controls.appendChild(done);
+    const index = path.indexOf('N16');
+    if (index >= 0) controls.appendChild(navButton('今夜の履歴を残して、歩道橋の選択に戻る', () => {
+      path = path.slice(0, index + 1); render();
+    }));
+    controls.appendChild(navButton('選ばなかった場面も含め、全文原稿を読む', full));
+  } else {
+    const target = targets(node, flags)[0];
+    controls.appendChild(navButton('つづきを読む →', () => go(target), target));
+  }
+  byId('previous-button').disabled = path.length <= 1;
+  save(); scrollToTop();
+  byId('reader-title').focus({preventScroll: true});
+}
+byId('home-button').addEventListener('click', home);
+byId('all-button').addEventListener('click', full);
+byId('manuscript-button').addEventListener('click', full);
+byId('reader-button').addEventListener('click', render);
+byId('continue-button').addEventListener('click', render);
+byId('start-button').addEventListener('click', restart);
+byId('restart-button').addEventListener('click', restart);
+byId('previous-button').addEventListener('click', () => { if (path.length > 1) { path.pop(); render(); } });
+function font(delta) {
+  fontSize = Math.max(16, Math.min(28, fontSize + delta));
+  document.documentElement.style.setProperty('--reader-size', fontSize + 'px'); save();
+}
+byId('font-down').addEventListener('click', () => font(-1));
+byId('font-up').addEventListener('click', () => font(1)); font(0);
+function hashScene() {
+  if (!location.hash.startsWith('#scene-')) return false;
+  const el = document.getElementById(location.hash.slice(1));
+  if (!el) return false;
+  mode('manuscript'); el.scrollIntoView(); return true;
+}
+window.addEventListener('hashchange', hashScene);
+if (!hashScene()) home();
+</script></body></html>
