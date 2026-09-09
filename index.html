@@ -26,29 +26,28 @@
 @media(max-width:480px){.title-quote{display:none}.title-copy{top:19%}.title-copy h1{font-size:30px}.title-menu{bottom:12.5%;width:235px}.title-story{font-size:11px}.title-translation{letter-spacing:2px}.title-top .round-control{width:33px;height:33px}.cast{inset:22% -20% 22%}.character{max-width:100%}#saki{left:-9%}#mio{right:-9%}.cast.single #saki{left:11%}.cast.single #mio{right:11%}.game-top-right>span{max-width:74px;text-align:right;line-height:1.5}.dialogue-box{height:230px;font-size:calc(var(--text-size) - 5px);padding:21px 20px 31px}.controls-left,.controls-right{gap:16px}.choice-panel{top:36%}.choice-heading{gap:8px}.choice-heading p{font-size:10px}.choice-panel:has(.story-choice:nth-child(4)){top:37%}.story-choice{font-size:12px;line-height:1.7}.title-bottom>span{max-width:48%}}
 @media(max-height:590px) and (orientation:landscape){.title-screen{padding-top:17px}.title-copy{top:21%;left:8%}.title-copy h1{font-size:33px;line-height:1.5}.title-prelude{font-size:10px;margin-bottom:12px}.title-translation{font-size:7px;letter-spacing:3px;margin-top:10px}.title-line{margin:18px 0 13px}.title-story{font-size:9px;line-height:1.9}.title-menu{left:auto;right:10%;bottom:21%;width:205px}.title-quote{display:none}.title-link{font-size:15px}.title-bottom{bottom:15px}.title-submenu{gap:13px;font-size:9px;margin-top:13px}.game-top{top:13px}.chapter-info h2{font-size:12px;margin-top:4px}.chapter-info>span{font-size:7px}.round-control{width:30px;height:30px}.cast{inset:6% 17% 0}.character{height:102%}.dialogue-wrap{left:6%;right:6%;bottom:11px}.dialogue-box{height:130px;min-height:0;font-size:16px;padding:15px 30px 28px;line-height:1.8}.dialogue-meta{height:25px}.dialogue-meta>span:first-child{font-size:10px;padding:7px 20px}.game-controls{padding-top:7px}.choice-panel{top:38%;max-height:65vh;overflow:auto;padding:16px 22px}.choice-heading{margin-bottom:12px}.story-choice{min-height:42px;font-size:12px;padding:8px 14px}#choice-list{gap:7px}.ending-eyebrow{font-size:8px}.ending-screen>p:first-of-type{margin-top:19px}.ending-screen h2{font-size:34px;margin-bottom:5px}.ending-rule{margin:8px 0 14px}.ending-thanks{margin:15px 0 13px}#ending-subtitle{font-size:12px}.ending-actions button{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.background,.character{transition:opacity .1s!important}}
-/* Event art keeps its entire composition above the reading area. H or the
-   visible button expands it without the text; no face/hand is cropped. */
-.cg-stage{position:absolute;z-index:2;inset:85px 0 280px;background:#17252a;overflow:hidden}
+/* Event art fills the viewport behind the reading UI. H or the visible
+   button hides the text and fits the entire uncropped composition. */
+.cg-stage{position:absolute;z-index:2;inset:0;background:#17252a;overflow:hidden}
 .cg-stage[hidden]{display:none}.cg-art{width:100%;height:100%;display:block}
-.cg-art img{width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;object-position:center;display:block}
+.cg-art img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center;display:block}
 .cg-art img[hidden],.cg-card img[hidden],.cg-viewer img[hidden]{display:none}
 .cg-status{position:absolute;left:7%;right:7%;top:40%;text-align:center;line-height:1.9;font-size:13px;white-space:pre-line}
 .cg-status[hidden]{display:none}.cg-active .cast{visibility:hidden}
 .hide-interface{position:absolute;z-index:6;right:5%;top:79px;padding:7px 12px;background:#173239cc;border:1px solid #e7e7d24d;border-radius:2px;font-size:10px;letter-spacing:.08em}
 .cg-active .hide-interface{top:55px}.interface-hidden .hide-interface{display:none}
 .game-screen.choosing .hide-interface{display:none}
-.cg-active.interface-hidden .cg-stage{inset:0}.show-interface{z-index:9}
-.cg-active .dialogue-wrap{background:#1b3037;padding-top:6px}
+.cg-active.interface-hidden .cg-art img{object-fit:contain}.show-interface{z-index:9}
+.cg-active .dialogue-wrap{background:linear-gradient(transparent,rgba(16,29,34,.6));padding-top:6px}
 .cg-tabs{display:flex;gap:22px;margin-bottom:22px;font-size:12px}.cg-tabs button{padding:8px 3px;border-bottom:1px solid transparent}.cg-tabs button.active{border-color:#4b747c;color:#365960}
 .cg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.cg-card{padding:0;text-align:left;border:1px solid #a6b5aa69;background:#faf8f159;overflow:hidden}
 .cg-card img,.cg-locked{width:100%;aspect-ratio:16/9;display:block;object-fit:contain;background:#dce3dd}
 .cg-locked{display:grid;place-items:center;color:#85948e;font-size:24px;letter-spacing:.12em}.cg-card>span:last-child{display:block;padding:12px;font-family:var(--serif);font-size:13px;line-height:1.6}
 .cg-card:disabled{opacity:.6}.cg-viewer{margin:0;display:grid;gap:14px}.cg-viewer img{display:block;width:100%;height:min(60dvh,620px);object-fit:contain;background:#17252a}.cg-view-actions{display:flex;gap:20px;justify-content:center;margin-top:18px;font-size:12px}
 .cg-gallery-error{margin:0;color:#854b42;font-size:12px;line-height:1.8}
-@media(min-width:1550px){.cg-stage{bottom:322px}}
-@media(max-width:800px){.cg-stage{top:82px;bottom:302px}.hide-interface{top:69px}.cg-active .hide-interface{top:53px}.cg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
-@media(max-width:480px){.cg-stage{top:100px;bottom:calc(min(270px,41dvh) + 74px + max(18px,env(safe-area-inset-bottom)))}.cg-active .hide-interface{top:64px}.cg-card>span:last-child{font-size:11px;padding:10px}}
-@media(max-height:590px) and (orientation:landscape){.cg-stage{top:66px;bottom:204px}.hide-interface{top:47px}.cg-active .hide-interface{top:44px;padding:3px 10px;font-size:9px}}
+@media(max-width:800px){.hide-interface{top:69px}.cg-active .hide-interface{top:53px}.cg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(max-width:480px){.cg-active .hide-interface{top:64px}.cg-card>span:last-child{font-size:11px;padding:10px}}
+@media(max-height:590px) and (orientation:landscape){.hide-interface{top:47px}.cg-active .hide-interface{top:44px;padding:3px 10px;font-size:9px}}
 
 /* Keep Safari landscape controls within the actual viewport and safe area. */
 @media(max-height:590px) and (orientation:landscape){.app{min-height:0}.dialogue-wrap{bottom:max(11px,env(safe-area-inset-bottom));left:max(6%,env(safe-area-inset-left));right:max(6%,env(safe-area-inset-right))}.game-top{left:max(5%,env(safe-area-inset-left));right:max(5%,env(safe-area-inset-right))}.title-top{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}}
